@@ -14,12 +14,18 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Openplotter. If not, see <http://www.gnu.org/licenses/>.
+import os
 from openplotterSettings import platform
+from openplotterSettings import language
 
 class Ports:
-	def __init__(self,conf):
-		self.usedPorts=[]
+	def __init__(self,conf,currentLanguage):
+		self.conf = conf
+		currentdir = os.path.dirname(__file__)
+		language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
 		platform2 = platform.Platform()
+
+		self.usedPorts=[]
 
 		if platform2.skPort:
 			self.usedPorts=[{'description':_('Signal K - Server'), 'type':'TCP', 'address':'localhost', 'port':platform2.skPort, 'direction':'out'},

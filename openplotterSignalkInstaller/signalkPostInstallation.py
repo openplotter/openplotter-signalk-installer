@@ -14,27 +14,22 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Openplotter. If not, see <http://www.gnu.org/licenses/>.
-import subprocess, os
+import subprocess, os, time
 from openplotterSettings import conf
 from openplotterSettings import language
 from openplotterSettings import platform
 
 def main():
 	conf2 = conf.Conf()
-	platform2 = platform.Platform()
 	currentdir = os.path.dirname(__file__)
 	currentLanguage = conf2.get('GENERAL', 'lang')
-	language2 = language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
+	language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
 	
-	print(_('Installing Signal K node server... '))
 	subprocess.call(['npm', 'install', '-g', '--unsafe-perm', 'signalk-server'])
-	print(' ')
-	print(_('Configuring Signal K node server.'))
-	print(_('Answer the questions in the new window.'))
-	print(_('If you do not know what to answer in any question, just press enter.'))
-	print(' ')
+
 	subprocess.call(['x-terminal-emulator', '-e', 'signalk-server-setup'])
 
+	platform2 = platform.Platform()
 	if platform2.skPort:
 		fo = open('/usr/share/applications/openplotter-signalk-installer.desktop', "w")
 		fo.write( '[Desktop Entry]\nName=Signal K\nExec=x-www-browser http://localhost:'+platform2.skPort+'\nIcon=openplotter-signalk-installer\nStartupNotify=true\nTerminal=false\nType=Application\nCategories=OpenPlotter')
@@ -44,7 +39,6 @@ def main():
 	else:
 		print(' ')
 		print(_('FAILED! Try again please.'))
-
 
 if __name__ == '__main__':
 	main()

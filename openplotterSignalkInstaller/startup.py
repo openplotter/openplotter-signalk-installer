@@ -14,17 +14,20 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Openplotter. If not, see <http://www.gnu.org/licenses/>.
+import os
 import time, subprocess
+from openplotterSettings import language
 
 #TODO set network startup
 class Start():
-	def __init__(self, conf):
+	def __init__(self, conf, currentLanguage):
 		self.conf = conf
+		currentdir = os.path.dirname(__file__)
+		language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
 		self.initialMessage = ''
 		try:
 			subprocess.check_output(['systemctl', 'is-active', 'signalk.service']).decode('utf-8')
-			self.initialMessage = _('Starting Signal K server...')
-		except:pass
+		except: self.initialMessage = _('Starting Signal K server...')
 
 		
 	def start(self):
@@ -39,8 +42,10 @@ class Start():
 		return {'green': green,'black': black,'red': red}
 
 class Check():
-	def __init__(self, conf):
+	def __init__(self, conf, currentLanguage):
 		self.conf = conf
+		currentdir = os.path.dirname(__file__)
+		language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
 		self.initialMessage = _('Checking Signal K server...')
 
 
