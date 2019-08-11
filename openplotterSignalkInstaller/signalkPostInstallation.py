@@ -32,7 +32,7 @@ def main():
 	platform2 = platform.Platform()
 	if platform2.skPort:
 		fo = open('/usr/share/applications/openplotter-signalk-installer.desktop', "w")
-		fo.write( '[Desktop Entry]\nName=Signal K\nExec=x-www-browser http://localhost:'+platform2.skPort+'\nIcon=openplotter-signalk-installer\nStartupNotify=true\nTerminal=false\nType=Application\nCategories=OpenPlotter')
+		fo.write( '[Desktop Entry]\nName=Signal K\nExec=x-www-browser '+platform2.http+'localhost:'+platform2.skPort+'\nIcon=openplotter-signalk-installer\nStartupNotify=true\nTerminal=false\nType=Application\nCategories=OpenPlotter')
 		fo.close()
 		print(' ')
 		print(_('DONE!'))
