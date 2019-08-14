@@ -17,6 +17,7 @@
 import os
 import time, subprocess
 from openplotterSettings import language
+from openplotterSettings import platform
 
 #TODO set network startup
 class Start():
@@ -24,6 +25,7 @@ class Start():
 		self.conf = conf
 		currentdir = os.path.dirname(__file__)
 		language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
+		self.platform = platform.Platform()
 		self.initialMessage = ''
 		try:
 			subprocess.check_output(['systemctl', 'is-active', 'signalk.service']).decode('utf-8')
@@ -35,8 +37,8 @@ class Start():
 		black = ''
 		red = ''
 
-		subprocess.call(['sudo', 'systemctl', 'start', 'signalk.socket'])
-		subprocess.call(['sudo', 'systemctl', 'start', 'signalk.service'])
+		subprocess.call([self.platform.admin, 'systemctl', 'start', 'signalk.socket'])
+		subprocess.call([self.platform.admin, 'systemctl', 'start', 'signalk.service'])
 		time.sleep(2)
 		black = _('started')
 		return {'green': green,'black': black,'red': red}

@@ -25,7 +25,7 @@ def main():
 	currentLanguage = conf2.get('GENERAL', 'lang')
 	language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
 	
-	subprocess.call(['npm', 'install', '-g', '--unsafe-perm', 'signalk-server'])
+	subprocess.call(['npm', 'install', '--verbose', '-g', '--unsafe-perm', 'signalk-server'])
 
 	subprocess.call(['x-terminal-emulator', '-e', 'signalk-server-setup'])
 
