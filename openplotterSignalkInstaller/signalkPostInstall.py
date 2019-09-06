@@ -29,16 +29,18 @@ def main():
 
 	subprocess.call(['x-terminal-emulator', '-e', 'signalk-server-setup'])
 
-	platform2 = platform.Platform()
-	if platform2.skPort:
-		fo = open('/usr/share/applications/openplotter-signalk-installer.desktop', "w")
-		fo.write( '[Desktop Entry]\nName=Signal K\nExec=x-www-browser '+platform2.http+'localhost:'+platform2.skPort+'\nIcon=openplotter-signalk-installer\nStartupNotify=true\nTerminal=false\nType=Application\nCategories=OpenPlotter')
-		fo.close()
-		print(' ')
-		print(_('DONE!'))
-	else:
-		print(' ')
-		print(_('FAILED! Try again please.'))
+	try:
+		platform2 = platform.Platform()
+		if platform2.skPort:
+			fo = open('/usr/share/applications/openplotter-signalk-installer.desktop', "w")
+			fo.write( '[Desktop Entry]\nName=Signal K\nExec=x-www-browser '+platform2.http+'localhost:'+platform2.skPort+'\nIcon=openplotter-signalk-installer\nStartupNotify=true\nTerminal=false\nType=Application\nCategories=OpenPlotter')
+			fo.close()
+			print(' ')
+			print(_('DONE'))
+		else:
+			print(' ')
+			print(_('FAILED: Try again please.'))
+	except Exception as e: print(_('FAILED: ')+str(e))
 
 if __name__ == '__main__':
 	main()

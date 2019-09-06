@@ -23,12 +23,10 @@ class Ports:
 		self.conf = conf
 		currentdir = os.path.dirname(__file__)
 		language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
-		platform2 = platform.Platform()
+		self.platform2 = platform.Platform()
+		self.connections = []
+		self.connections.append({'id':'conn1', 'description':_('Signal K - Admin'), 'data':[], 'type':'TCP', 'mode':'server', 'address':'localhost', 'port':self.platform2.skPort, 'editable':'0'})
+		self.connections.append({'id':'conn2', 'description':_('Signal K - NMEA 0183 output'), 'data':[], 'type':'TCP', 'mode':'server', 'address':'localhost', 'port':'10110', 'editable':'0'})
 
-		self.usedPorts=[]
-
-		if platform2.skPort:
-			self.usedPorts=[{'description':_('Signal K - Server'), 'type':'TCP', 'address':'localhost', 'port':platform2.skPort, 'direction':'out'},
-			{'description':_('Signal K - NMEA 0183 output'), 'type':'TCP', 'address':'localhost', 'port':'10110', 'direction':'out'}]
-
-
+	def usedPorts(self):
+		if self.platform2.skPort: return self.connections

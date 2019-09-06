@@ -31,6 +31,6 @@ setup (
 	'Operating System :: POSIX :: Linux',
 	'Programming Language :: Python :: 3'],
 	include_package_data=True,
-	entry_points={'console_scripts': ['signalkPostInstallation=openplotterSignalkInstaller.signalkPostInstallation:main']},
+	entry_points={'console_scripts': ['signalkPostInstall=openplotterSignalkInstaller.signalkPostInstall:main','signalkPreUninstall=openplotterSignalkInstaller.signalkPreUninstall:main']},
 	data_files=[('share/applications', ['openplotterSignalkInstaller/data/openplotter-signalk-installer.desktop']),('share/pixmaps', ['openplotterSignalkInstaller/data/openplotter-signalk-installer.png']),],
 	)
