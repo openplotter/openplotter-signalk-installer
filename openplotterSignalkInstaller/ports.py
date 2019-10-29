@@ -30,17 +30,17 @@ class Ports:
 
 	def usedPorts(self):
 		if self.platform2.skPort:
-			#try:
-			setting_file = self.platform2.skDir+'/settings.json'
-			data = ''
-			with open(setting_file) as data_file:
-				data = ujson.load(data_file)
-			if 'pipedProviders' in data:
-				for i in data['pipedProviders']:
-					if i['pipeElements'][0]['options']['subOptions']['type']=='udp':
-						self.connections.append({'id':i['id'], 'description':_('Signal K connection'), 'data':[], 'type':'UDP', 'mode':'server', 'address':'localhost', 'port':i['pipeElements'][0]['options']['subOptions']['port'], 'editable':'0'})
-					elif i['pipeElements'][0]['options']['subOptions']['type']=='tcp':
-						if i['pipeElements'][0]['options']['subOptions']['host']=='localhost' or i['pipeElements'][0]['options']['subOptions']['host']=='127.0.0.1':
-							self.connections.append({'id':i['id'], 'description':_('Signal K connection'), 'data':[], 'type':'TCP', 'mode':'client', 'address':'localhost', 'port':i['pipeElements'][0]['options']['subOptions']['port'], 'editable':'0'})
-			#except:pass
+			try:
+				setting_file = self.platform2.skDir+'/settings.json'
+				data = ''
+				with open(setting_file) as data_file:
+					data = ujson.load(data_file)
+				if 'pipedProviders' in data:
+					for i in data['pipedProviders']:
+						if i['pipeElements'][0]['options']['subOptions']['type']=='udp':
+							self.connections.append({'id':i['id'], 'description':_('Signal K connection'), 'data':[], 'type':'UDP', 'mode':'server', 'address':'localhost', 'port':i['pipeElements'][0]['options']['subOptions']['port'], 'editable':'0'})
+						elif i['pipeElements'][0]['options']['subOptions']['type']=='tcp':
+							if i['pipeElements'][0]['options']['subOptions']['host']=='localhost' or i['pipeElements'][0]['options']['subOptions']['host']=='127.0.0.1':
+								self.connections.append({'id':i['id'], 'description':_('Signal K connection'), 'data':[], 'type':'TCP', 'mode':'client', 'address':'localhost', 'port':i['pipeElements'][0]['options']['subOptions']['port'], 'editable':'0'})
+			except:pass
 			return self.connections
