@@ -1,19 +1,77 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: openplotter-signalk-installer\n"
-"POT-Creation-Date: 2019-08-08 17:17+0200\n"
-"PO-Revision-Date: 2019-08-08 17:18+0200\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: en\n"
+"Project-Id-Version: openplotter\n"
+"POT-Creation-Date: 2019-10-29 17:08+0100\n"
+"PO-Revision-Date: 2019-10-30 10:12+0100\n"
+"Last-Translator: Sailoog (sailoog)\n"
+"Language-Team: German\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Crowdin-Project: openplotter\n"
+"X-Crowdin-Language: de\n"
+"X-Crowdin-File: openplotter-signalk-installer.po\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: startup.py:37
-msgid "Checking Signal K installation..."
-msgstr ""
+#: ports.py:28
+msgid "Signal K - Admin"
+msgstr "Signal K - Administrator"
+
+#: ports.py:29
+msgid "Signal K - NMEA 0183 output"
+msgstr "Signal K - NMEA 0183 Ausgang"
+
+#: ports.py:41 ports.py:44
+msgid "Signal K connection"
+msgstr "Signal K Verbindung"
+
+#: signalkPostInstall.py:39 signalkPreUninstall.py:33 signalkPreUninstall.py:45
+#: signalkPreUninstall.py:51
+msgid "DONE"
+msgstr "Fertig"
+
+#: signalkPostInstall.py:42
+msgid "FAILED: Try again please."
+msgstr "FEHLGESCHLAGEN: Bitte versuchen Sie es erneut."
+
+#: signalkPostInstall.py:43 signalkPreUninstall.py:34 signalkPreUninstall.py:46
+#: signalkPreUninstall.py:52
+msgid "FAILED: "
+msgstr "FEHLGESCHLAGEN: "
+
+#: signalkPreUninstall.py:29
+msgid "Removing files..."
+msgstr "Entferne Dateien..."
+
+#: signalkPreUninstall.py:36
+msgid "Removing signalk service..."
+msgstr "Entferne Signalk Service..."
+
+#: signalkPreUninstall.py:48
+msgid "Uninstalling Signal K..."
+msgstr "Deinstalliere Signal K..."
+
+#: startup.py:32
+msgid "Starting Signal K server..."
+msgstr "SignalK Server starten..."
+
+#: startup.py:43
+msgid "started"
+msgstr "gestartet"
+
+#: startup.py:51
+msgid "Checking Signal K server..."
+msgstr "Überprüfe Signal K Server..."
+
+#: startup.py:61
+msgid "running"
+msgstr "läuft"
+
+#: startup.py:62
+msgid "Signal K server is not running"
+msgstr "Signal K Server läuft nicht"

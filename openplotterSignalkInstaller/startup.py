@@ -14,8 +14,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Openplotter. If not, see <http://www.gnu.org/licenses/>.
-import os
-import time, subprocess
+import time, subprocess, os, sys
 from openplotterSettings import language
 from openplotterSettings import platform
 
@@ -28,7 +27,7 @@ class Start():
 		self.platform = platform.Platform()
 		self.initialMessage = ''
 		try:
-			subprocess.check_output(['systemctl', 'is-active', 'signalk.service']).decode('utf-8')
+			subprocess.check_output(['systemctl', 'is-active', 'signalk.service']).decode(sys.stdin.encoding)
 		except: self.initialMessage = _('Starting Signal K server...')
 
 		
@@ -57,7 +56,7 @@ class Check():
 		red = ''
 
 		try:
-			subprocess.check_output(['systemctl', 'is-active', 'signalk.service']).decode('utf-8')
+			subprocess.check_output(['systemctl', 'is-active', 'signalk.service']).decode(sys.stdin.encoding)
 			green = _('running')
 		except:red = _('Signal K server is not running')
 
