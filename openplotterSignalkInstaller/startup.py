@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 # This file is part of Openplotter.
-# Copyright (C) 2015 by sailoog <https://github.com/sailoog/openplotter>
-#
+# Copyright (C) 2019 by Sailoog <https://github.com/openplotter/openplotter-signalk-installer>
+#                  
 # Openplotter is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 2 of the License, or
@@ -14,21 +14,16 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Openplotter. If not, see <http://www.gnu.org/licenses/>.
-import time, subprocess, os, sys
-from openplotterSettings import language
-from openplotterSettings import platform
 
-#TODO set network startup
+import subprocess, os, sys
+from openplotterSettings import language
+
 class Start():
 	def __init__(self, conf, currentLanguage):
 		self.conf = conf
 		currentdir = os.path.dirname(__file__)
 		language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
-		self.platform = platform.Platform()
 		self.initialMessage = ''
-		try:
-			subprocess.check_output(['systemctl', 'is-active', 'signalk.service']).decode(sys.stdin.encoding)
-		except: self.initialMessage = _('Starting Signal K server...')
 
 		
 	def start(self):
@@ -36,10 +31,6 @@ class Start():
 		black = ''
 		red = ''
 
-		subprocess.call([self.platform.admin, 'systemctl', 'start', 'signalk.socket'])
-		subprocess.call([self.platform.admin, 'systemctl', 'start', 'signalk.service'])
-		time.sleep(2)
-		black = _('started')
 		return {'green': green,'black': black,'red': red}
 
 class Check():

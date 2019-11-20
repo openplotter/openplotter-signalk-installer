@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=Signal K
-Exec=x-www-browser http://localhost:3000
+Name=Signal K Installer
+Exec=openplotter-signalk-installer
 Icon=openplotter-signalk-installer
 StartupNotify=true
 Terminal=false

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 # This file is part of Openplotter.
-# Copyright (C) 2019 by sailoog <https://github.com/sailoog/openplotter>
-#                     e-sailing <https://github.com/e-sailing/openplotter>
+# Copyright (C) 2019 by Sailoog <https://github.com/openplotter/openplotter-signalk-installer>
+#                  
 # Openplotter is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 2 of the License, or
@@ -31,6 +31,6 @@ setup (
 	'Operating System :: POSIX :: Linux',
 	'Programming Language :: Python :: 3'],
 	include_package_data=True,
-	entry_points={'console_scripts': ['signalkPostInstall=openplotterSignalkInstaller.signalkPostInstall:main','signalkPreUninstall=openplotterSignalkInstaller.signalkPreUninstall:main']},
-	data_files=[('share/applications', ['openplotterSignalkInstaller/data/openplotter-signalk-installer.desktop']),('share/pixmaps', ['openplotterSignalkInstaller/data/openplotter-signalk-installer.png']),],
+	entry_points={'console_scripts': ['signalkSettings=openplotterSignalkInstaller.signalkSettings:main','openplotter-signalk-installer=openplotterSignalkInstaller.openplotterSignalkInstaller:main','signalkPostInstall=openplotterSignalkInstaller.signalkPostInstall:main','signalkPreUninstall=openplotterSignalkInstaller.signalkPreUninstall:main']},
+	data_files=[('share/applications', ['openplotterSignalkInstaller/data/openplotter-signalk-installer.desktop','openplotterSignalkInstaller/data/openplotter-signalk.desktop']),('share/pixmaps', ['openplotterSignalkInstaller/data/openplotter-signalk-installer.png','openplotterSignalkInstaller/data/openplotter-signalk.png']),],
 	)

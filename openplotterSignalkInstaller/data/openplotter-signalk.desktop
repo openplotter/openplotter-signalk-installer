@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Signal K
+Exec=x-www-browser http://localhost:3000
+Icon=openplotter-signalk
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=OpenPlotter
