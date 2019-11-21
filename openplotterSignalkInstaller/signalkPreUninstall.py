@@ -45,7 +45,7 @@ def main():
 		print(_('DONE'))
 	except Exception as e: print(_('FAILED: ')+str(e))
 
-	print(_('Uninstalling Signal K...'))
+	print(_('Uninstalling Signal K Server...'))
 	try:
 		subprocess.call(['npm', 'uninstall', '--verbose', '-g', 'signalk-server'])
 		print(_('DONE'))

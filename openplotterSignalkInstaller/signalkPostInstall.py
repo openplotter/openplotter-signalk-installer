@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Openplotter. If not, see <http://www.gnu.org/licenses/>.
 
-import subprocess, os
+import subprocess, os, sys
 from openplotterSettings import conf
 from openplotterSettings import language
 from openplotterSettings import platform
@@ -26,50 +26,57 @@ def main():
 	currentLanguage = conf2.get('GENERAL', 'lang')
 	language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
 	platform2 = platform.Platform()
+	if platform2.skDir: skDir = platform2.skDir
+	else: skDir = conf2.home+'/.signalk'
+	action = ''
+	try:
+		action = sys.argv[1]
+	except:pass
 
 	try:
-		print(_('Removing previous installations...'))
-
-		if platform2.skDir:
-			subprocess.call(['systemctl', 'stop', 'signalk.service'])
-			subprocess.call(['systemctl', 'stop', 'signalk.socket'])
-			subprocess.call(['rm', '-rf', platform2.skDir])
-		skDir = conf2.home+'/.signalk'
-		subprocess.call(['rm', '-rf', skDir])
-		os.mkdir(skDir)
+		subprocess.call(['systemctl', 'stop', 'signalk.service'])
+		subprocess.call(['systemctl', 'stop', 'signalk.socket'])
 
 		print(_('Installing/Updating signal K server...'))
-
 		subprocess.call(['npm', 'install', '--verbose', '-g', '--unsafe-perm', 'signalk-server'])
 
-		print(_('Editing config files...'))
+		if action == 'reinstall':
+			print(_('Removing previous installations...'))
+			subprocess.call(['rm', '-rf', skDir])
+			skDir = conf2.home+'/.signalk'
+			subprocess.call(['rm', '-rf', skDir])
 
-		fo = open(skDir+'/package.json', "w")
-		fo.write( '{"name": "signalk-server-config","version": "0.0.1","description": "This file is here to track your plugin and webapp installs.","repository": {},"license": "Apache-2.0"}')
-		fo.close()
+		if not os.path.exists(skDir+'/settings.json'):
+			print(_('Editing config files...'))
 
-		fo = open(skDir+'/settings.json', "w")
-		fo.write( '{"interfaces": {},"ssl": false,"pipedProviders": [],"security": {"strategy": "./tokensecurity"}}')
-		fo.close()
+			os.mkdir(skDir)
 
-		fo = open(skDir+'/signalk-server', "w")
-		fo.write( '#!/bin/sh\n/usr/lib/node_modules/signalk-server/bin/signalk-server -c '+skDir+' $*\n')
-		fo.close()
+			fo = open(skDir+'/package.json', "w")
+			fo.write( '{"name": "signalk-server-config","version": "0.0.1","description": "This file is here to track your plugin and webapp installs.","repository": {},"license": "Apache-2.0"}')
+			fo.close()
 
-		subprocess.call(['chown', '-R', conf2.user+':'+conf2.user, skDir])
-		subprocess.call(['chmod', '775', skDir+'/signalk-server'])
+			fo = open(skDir+'/settings.json', "w")
+			fo.write( '{"interfaces": {},"ssl": false,"pipedProviders": [],"security": {"strategy": "./tokensecurity"}}')
+			fo.close()
 
-		fo = open('/etc/systemd/system/signalk.socket', "w")
-		fo.write( '[Socket]\nListenStream=3000\n\n[Install]\nWantedBy=sockets.target\n')
-		fo.close()
+			fo = open(skDir+'/signalk-server', "w")
+			fo.write( '#!/bin/sh\n/usr/lib/node_modules/signalk-server/bin/signalk-server -c '+skDir+' $*\n')
+			fo.close()
 
-		fo = open('/etc/systemd/system/signalk.service', "w")
-		fo.write( '[Service]\nExecStart='+skDir+'/signalk-server\nRestart=always\nStandardOutput=syslog\nStandardError=syslog\nWorkingDirectory='+skDir+'\nUser='+conf2.user+'\nEnvironment=EXTERNALPORT=3000\n[Install]\nWantedBy=multi-user.target\n')
-		fo.close()
+			subprocess.call(['chown', '-R', conf2.user+':'+conf2.user, skDir])
+			subprocess.call(['chmod', '775', skDir+'/signalk-server'])
 
-		fo = open('/usr/share/applications/openplotter-signalk.desktop', "w")
-		fo.write( '[Desktop Entry]\nName=Signal K\nExec=x-www-browser http://localhost:3000\nIcon=openplotter-signalk\nStartupNotify=true\nTerminal=false\nType=Application\nCategories=OpenPlotter')
-		fo.close()
+			fo = open('/etc/systemd/system/signalk.socket', "w")
+			fo.write( '[Socket]\nListenStream=3000\n\n[Install]\nWantedBy=sockets.target\n')
+			fo.close()
+
+			fo = open('/etc/systemd/system/signalk.service', "w")
+			fo.write( '[Service]\nExecStart='+skDir+'/signalk-server\nRestart=always\nStandardOutput=syslog\nStandardError=syslog\nWorkingDirectory='+skDir+'\nUser='+conf2.user+'\nEnvironment=EXTERNALPORT=3000\n[Install]\nWantedBy=multi-user.target\n')
+			fo.close()
+
+			fo = open('/usr/share/applications/openplotter-signalk.desktop', "w")
+			fo.write( '[Desktop Entry]\nName=Signal K\nExec=x-www-browser http://localhost:3000\nIcon=openplotter-signalk\nStartupNotify=true\nTerminal=false\nType=Application\nCategories=OpenPlotter')
+			fo.close()
 
 		subprocess.call(['systemctl', 'daemon-reload'])
 		subprocess.call(['systemctl', 'enable', 'signalk.service'])
