@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openplotter-signalk-installer\n"
-"POT-Creation-Date: 2019-11-20 11:47+0100\n"
-"PO-Revision-Date: 2019-11-20 11:47+0100\n"
+"POT-Creation-Date: 2019-12-13 19:52+0100\n"
+"PO-Revision-Date: 2019-12-13 19:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -115,24 +115,24 @@ msgstr ""
 msgid "Signal K connection"
 msgstr ""
 
-#: signalkPostInstall.py:31
-msgid "Removing previous installations..."
-msgstr ""
-
-#: signalkPostInstall.py:41
+#: signalkPostInstall.py:40
 msgid "Installing/Updating signal K server..."
 msgstr ""
 
-#: signalkPostInstall.py:45 signalkSettings.py:38
+#: signalkPostInstall.py:44
+msgid "Removing previous installations..."
+msgstr ""
+
+#: signalkPostInstall.py:50 signalkSettings.py:38
 msgid "Editing config files..."
 msgstr ""
 
-#: signalkPostInstall.py:82 signalkPreUninstall.py:33 signalkPreUninstall.py:45
+#: signalkPostInstall.py:89 signalkPreUninstall.py:33 signalkPreUninstall.py:45
 #: signalkPreUninstall.py:51 signalkSettings.py:73
 msgid "DONE"
 msgstr ""
 
-#: signalkPostInstall.py:84 signalkPreUninstall.py:34 signalkPreUninstall.py:46
+#: signalkPostInstall.py:91 signalkPreUninstall.py:34 signalkPreUninstall.py:46
 #: signalkPreUninstall.py:52 signalkSettings.py:75
 msgid "FAILED: "
 msgstr ""
@@ -146,7 +146,7 @@ msgid "Removing signalk service..."
 msgstr ""
 
 #: signalkPreUninstall.py:48
-msgid "Uninstalling Signal K..."
+msgid "Uninstalling Signal K Server..."
 msgstr ""
 
 #: startup.py:41
