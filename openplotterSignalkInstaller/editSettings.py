@@ -51,17 +51,21 @@ class EditSettings:
 			self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': 'SignalK', 'subOptions': {"type": "serial", "device": device, "baudrate": int(bauds)}}}], 'enabled': True, 'id': ID})
 		return self.write()
 
-	def setCanbusConnection(self, ID, interface):
-		self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': 'NMEA2000', 'subOptions': {'interface': interface, 'type': 'canbus-canboatjs'}}}], 'enabled': True, 'id': ID})
+	def setNetworkConnection(self,ID,data,networkType,host,port):
+		if data == 'NMEA0183':
+			if networkType == 'UDP':
+				self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': data, 'subOptions': {"validateChecksum": True, "type": "udp", "port": port}}}], 'enabled': True, 'id': ID})
+			elif networkType == 'TCP':
+				self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': data, 'subOptions': {"validateChecksum": True, "type": "tcp", "host": host, "port": port}}}], 'enabled': True, 'id': ID})
+		elif data == 'SignalK':
+			if networkType == 'UDP':
+				self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': data, 'subOptions': {"type": "udp", "port": port}}}], 'enabled': True, 'id': ID})
+			elif networkType == 'TCP':
+				self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': data, 'subOptions': {"type": "tcp", "host": host, "port": port}}}], 'enabled': True, 'id': ID})
 		return self.write()
 
-	def setNetworkConnection(self, ID, data, port):
-		if data == 'NMEA 0183':
-			pass
-		elif data == 'NMEA 2000':
-			pass
-		elif data == 'Signal K':
-			pass
+	def setCanbusConnection(self, ID, interface):
+		self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': 'NMEA2000', 'subOptions': {'interface': interface, 'type': 'canbus-canboatjs'}}}], 'enabled': True, 'id': ID})
 		return self.write()
 
 	def removeConnection(self, ID):
