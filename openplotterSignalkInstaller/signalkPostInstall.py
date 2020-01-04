@@ -22,7 +22,7 @@ from openplotterSettings import platform
 
 def main():
 	conf2 = conf.Conf()
-	currentdir = os.path.dirname(__file__)
+	currentdir = os.path.dirname(os.path.abspath(__file__))
 	currentLanguage = conf2.get('GENERAL', 'lang')
 	language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
 	platform2 = platform.Platform()
@@ -59,8 +59,14 @@ def main():
 			fo.write( '{"interfaces": {},"ssl": false,"pipedProviders": [],"security": {"strategy": "./tokensecurity"}}')
 			fo.close()
 
+			node_path_all = subprocess.check_output(['npm', 'config', 'get', 'prefix']).decode(sys.stdin.encoding)
+			node_path_line = node_path_all.split('\n')
+			node_path = '/usr'
+			if node_path_line.length > 0:
+				node_path = node_path_line[node_path_line.length - 1]
+
 			fo = open(skDir+'/signalk-server', "w")
-			fo.write( '#!/bin/sh\n/usr/lib/node_modules/signalk-server/bin/signalk-server -c '+skDir+' $*\n')
+			fo.write( '#!/bin/sh\n'+node_path+'/lib/node_modules/signalk-server/bin/signalk-server -c '+skDir+' $*\n')
 			fo.close()
 
 			subprocess.call(['chown', '-R', conf2.user+':'+conf2.user, skDir])
