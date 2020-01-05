@@ -12,23 +12,29 @@ Install [openplotter-settings](https://github.com/openplotter/openplotter-settin
 
 Install [openplotter-settings](https://github.com/openplotter/openplotter-settings) for **development**.
 
-Install dependencies:
+Install openplotter-signalk-installer dependencies:
 
 `sudo apt install libnss-mdns avahi-utils libavahi-compat-libdnssd-dev nodejs canboat`
 
 Clone the repository:
 
-`git clone https://github.com/openplotter/openplotter-signalk-installer.git`
+`git clone https://github.com/openplotter/openplotter-signalk-installer`
 
-Make your changes and install:
+Install:
 
-`sudo python3 setup.py install`
+```
+cd openplotter-signalk-installer
+sudo python3 setup.py install
+```
+Run post-installation script:
+
+`sudo signalkPostInstall`
 
 Run:
 
 `openplotter-signalk-installer`
 
-Pull request your changes to github and we will check and add them to the next version of the [Debian package](https://launchpad.net/~openplotter/+archive/ubuntu/openplotter/).
+Make your changes and repeat installation and post-installation steps to test. Pull request your changes to github and we will check and add them to the next version of the [Debian package](https://launchpad.net/~openplotter/+archive/ubuntu/openplotter/).
 
 ### Documentation
 
