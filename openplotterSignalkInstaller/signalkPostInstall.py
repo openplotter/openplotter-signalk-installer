@@ -38,6 +38,10 @@ def main():
 		subprocess.call(['systemctl', 'stop', 'signalk.socket'])
 
 		print(_('Installing/Updating signal K server...'))
+		
+		try: subprocess.check_output(['npm', '-v']).decode(sys.stdin.encoding)
+		except: subprocess.call(['apt', 'install', 'npm'])
+
 		subprocess.call(['npm', 'install', '--verbose', '-g', '--unsafe-perm', 'signalk-server'])
 
 		if action == 'reinstall':
