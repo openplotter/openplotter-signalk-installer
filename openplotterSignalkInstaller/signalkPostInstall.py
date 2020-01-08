@@ -63,12 +63,9 @@ def main():
 			fo.write( '{"interfaces": {},"ssl": false,"pipedProviders": [],"security": {"strategy": "./tokensecurity"}}')
 			fo.close()
 
-			node_path_all = subprocess.check_output(['npm', 'config', 'get', 'prefix']).decode(sys.stdin.encoding)
-			node_path_line = node_path_all.split('\n')
-			node_path = '/usr'
-			if len(node_path_line) > 0:
-				node_path = node_path_line[len(node_path_line) - 1]
-
+			node_path = subprocess.check_output(['npm', 'config', 'get', 'prefix']).decode(sys.stdin.encoding)
+			node_path = node_path.replace('\n','')
+			node_path = node_path.strip()
 			fo = open(skDir+'/signalk-server', "w")
 			fo.write( '#!/bin/sh\n'+node_path+'/lib/node_modules/signalk-server/bin/signalk-server -c '+skDir+' $*\n')
 			fo.close()
