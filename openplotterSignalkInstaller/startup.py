@@ -20,9 +20,6 @@ from openplotterSettings import language
 
 class Start():
 	def __init__(self, conf, currentLanguage):
-		self.conf = conf
-		currentdir = os.path.dirname(__file__)
-		language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
 		self.initialMessage = ''
 
 		
@@ -35,8 +32,7 @@ class Start():
 
 class Check():
 	def __init__(self, conf, currentLanguage):
-		self.conf = conf
-		currentdir = os.path.dirname(__file__)
+		currentdir = os.path.dirname(os.path.abspath(__file__))
 		language.Language(currentdir,'openplotter-signalk-installer',currentLanguage)
 		self.initialMessage = _('Checking Signal K server...')
 
