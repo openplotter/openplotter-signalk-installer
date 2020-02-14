@@ -1,0 +1,15 @@
+Source: openplotter-signalk-installer
+Section: misc
+Priority: optional
+Maintainer: Sailoog <info@sailoog.com>
+Build-Depends: debhelper (>=9),dh-python,python3-all,python3-setuptools
+Standards-Version: 3.9.6
+Homepage: https://github.com/openplotter/openplotter-signalk-installer
+X-Python3-Version: >= 3.2
+
+Package: openplotter-signalk-installer
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${python3:Depends}, openplotter-settings, libnss-mdns, avahi-utils, libavahi-compat-libdnssd-dev, nodejs, canboat
+Description: OpenPlotter app to manage Signal K node server installation
+ OpenPlotter app to manage Signal K node server installation
