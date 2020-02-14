@@ -19,6 +19,7 @@ import subprocess, os, sys
 from openplotterSettings import conf
 from openplotterSettings import language
 from openplotterSettings import platform
+from .version import version
 
 def main():
 	conf2 = conf.Conf()
@@ -92,9 +93,13 @@ def main():
 		subprocess.call(['systemctl', 'restart', 'signalk.socket'])
 		subprocess.call(['systemctl', 'restart', 'signalk.service'])
 		
-		print(' ')
 		print(_('DONE'))
+	except Exception as e: print(_('FAILED: ')+str(e))
 
+	print(_('Setting version...'))
+	try:
+		conf2.set('APPS', 'signalk', version)
+		print(_('DONE'))
 	except Exception as e: print(_('FAILED: ')+str(e))
 
 if __name__ == '__main__':
