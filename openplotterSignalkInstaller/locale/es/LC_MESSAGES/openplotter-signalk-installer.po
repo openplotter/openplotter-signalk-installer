@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
-"POT-Creation-Date: 2019-12-13 19:52+0100\n"
-"PO-Revision-Date: 2019-12-16 13:01+0100\n"
+"POT-Creation-Date: 2020-02-14 19:39+0100\n"
+"PO-Revision-Date: 2020-02-28 19:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es\n"
@@ -18,87 +18,87 @@ msgstr ""
 "X-Crowdin-File: openplotter-signalk-installer.po\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: openplotterSignalkInstaller.py:33
+#: openplotterSignalkInstaller.py:34
 msgid "Signal K Installer"
 msgstr "Instalador de Signal K"
 
-#: openplotterSignalkInstaller.py:43
+#: openplotterSignalkInstaller.py:44
 msgid "Help"
 msgstr "Ayuda"
 
-#: openplotterSignalkInstaller.py:46 openplotterSignalkInstaller.py:64
+#: openplotterSignalkInstaller.py:47 openplotterSignalkInstaller.py:65
 msgid "Settings"
 msgstr "Ajustes"
 
-#: openplotterSignalkInstaller.py:49
+#: openplotterSignalkInstaller.py:50
 msgid "Vessel Data"
 msgstr "Datos del buque"
 
-#: openplotterSignalkInstaller.py:52
+#: openplotterSignalkInstaller.py:53
 msgid "Reinstall Signal K"
 msgstr "Reinstalar Signal K"
 
-#: openplotterSignalkInstaller.py:55
+#: openplotterSignalkInstaller.py:56
 msgid "Apply Changes"
 msgstr "Aplicar cambios"
 
-#: openplotterSignalkInstaller.py:57
+#: openplotterSignalkInstaller.py:58
 msgid "Cancel Changes"
 msgstr "Cancelar Cambios"
 
-#: openplotterSignalkInstaller.py:120
+#: openplotterSignalkInstaller.py:121
 msgid "Installed plugins, login credentials and all current settings will be removed. Are you sure?"
 msgstr "Plugins instalados, las credenciales de inicio de sesión y todos los ajustes actuales serán eliminados. ¿Está seguro?"
 
-#: openplotterSignalkInstaller.py:121 openplotterSignalkInstaller.py:137
+#: openplotterSignalkInstaller.py:122 openplotterSignalkInstaller.py:138
 msgid "Question"
 msgstr "Pregunta"
 
-#: openplotterSignalkInstaller.py:129
+#: openplotterSignalkInstaller.py:130
 msgid "Reinstalling Signal K, please wait... "
 msgstr "Reinstalando Signal K, por favor espere... "
 
-#: openplotterSignalkInstaller.py:136
+#: openplotterSignalkInstaller.py:137
 msgid "Only port and SSL settings will be changed. Installed plugins, login credentials and all current settings will be kept. Are you sure?"
 msgstr "Sólo se modificarán los ajustes de puerto y SSL. Los plugins instalados, las credenciales de acceso y todos los ajustes actuales se mantendrán. ¿Está seguro?"
 
-#: openplotterSignalkInstaller.py:145
+#: openplotterSignalkInstaller.py:146
 msgid "Configuring Signal K port and SSL, please wait... "
 msgstr "Configurando puerto Signal K y SSL, por favor espere... "
 
-#: openplotterSignalkInstaller.py:155
+#: openplotterSignalkInstaller.py:156
 msgid "Port"
 msgstr "Puerto"
 
-#: openplotterSignalkInstaller.py:158
+#: openplotterSignalkInstaller.py:159
 msgid "The Signal K default port is 3000"
 msgstr "El puerto por defecto de Signal K es 3000"
 
-#: openplotterSignalkInstaller.py:159
+#: openplotterSignalkInstaller.py:160
 msgid "Port 80 does not require \":3000\" in browsers and app interfaces"
 msgstr "El puerto 80 no requiere \":3000\" en navegadores e interfaces de aplicaciones"
 
-#: openplotterSignalkInstaller.py:161
+#: openplotterSignalkInstaller.py:162
 msgid "Enable SSL"
 msgstr "Habilitar SSL"
 
-#: openplotterSignalkInstaller.py:163
+#: openplotterSignalkInstaller.py:164
 msgid "The Signal K default SSL state is \"disabled\""
 msgstr "El estado SSL por defecto de Signal K es \"deshabilitado\""
 
-#: openplotterSignalkInstaller.py:164
+#: openplotterSignalkInstaller.py:165
 msgid "Enabling SSL for port 80 will result in port 443"
 msgstr "Habilitar SSL para el puerto 80 resultará en el uso del puerto 443"
 
-#: openplotterSignalkInstaller.py:165
+#: openplotterSignalkInstaller.py:166
 msgid "Enabling SSL for any other port will result in port 3443"
 msgstr "Habilitar SSL para cualquier otro puerto resultará en el puerto 3443"
 
-#: openplotterSignalkInstaller.py:206
+#: openplotterSignalkInstaller.py:207
 msgid "Restarting Signal K server... "
 msgstr "Reiniciando servidor Signal K... "
 
-#: openplotterSignalkInstaller.py:211
+#: openplotterSignalkInstaller.py:212
 msgid "Signal K server restarted"
 msgstr "Servidor Signal K reiniciado"
 
@@ -114,27 +114,33 @@ msgstr "Signal K - Salida NMEA 0183"
 msgid "Signal K connection"
 msgstr "Conexión Signal K"
 
-#: signalkPostInstall.py:40
+#: signalkPostInstall.py:41
 msgid "Installing/Updating signal K server..."
 msgstr "Instalando/Actualizando servidor de señal K..."
 
-#: signalkPostInstall.py:44
+#: signalkPostInstall.py:49
 msgid "Removing previous installations..."
 msgstr "Desinstalando versión anterior..."
 
-#: signalkPostInstall.py:50 signalkSettings.py:38
+#: signalkPostInstall.py:55 signalkSettings.py:38
 msgid "Editing config files..."
 msgstr "Editando archivos de configuración..."
 
-#: signalkPostInstall.py:89 signalkPreUninstall.py:33 signalkPreUninstall.py:45
-#: signalkPreUninstall.py:51 signalkSettings.py:73
+#: signalkPostInstall.py:96 signalkPostInstall.py:102 signalkPreUninstall.py:33
+#: signalkPreUninstall.py:45 signalkPreUninstall.py:51
+#: signalkPreUninstall.py:57 signalkSettings.py:73
 msgid "DONE"
 msgstr "HECHO"
 
-#: signalkPostInstall.py:91 signalkPreUninstall.py:34 signalkPreUninstall.py:46
-#: signalkPreUninstall.py:52 signalkSettings.py:75
+#: signalkPostInstall.py:97 signalkPostInstall.py:103 signalkPreUninstall.py:34
+#: signalkPreUninstall.py:46 signalkPreUninstall.py:52
+#: signalkPreUninstall.py:58 signalkSettings.py:75
 msgid "FAILED: "
 msgstr "ERROR: "
+
+#: signalkPostInstall.py:99
+msgid "Setting version..."
+msgstr "Ajustando versión..."
 
 #: signalkPreUninstall.py:30
 msgid "Removing files..."
@@ -148,14 +154,18 @@ msgstr "Eliminando servicio SignalK..."
 msgid "Uninstalling Signal K Server..."
 msgstr "Desinstalando Signal K..."
 
-#: startup.py:41
+#: signalkPreUninstall.py:54
+msgid "Removing version..."
+msgstr "Eliminando versión..."
+
+#: startup.py:37
 msgid "Checking Signal K server..."
 msgstr "Comprobando servidor Signal K..."
 
-#: startup.py:51
+#: startup.py:47
 msgid "running"
 msgstr "en ejecución"
 
-#: startup.py:52
+#: startup.py:48
 msgid "Signal K server is not running"
 msgstr "El servidor Signal K no se está ejecutando"
