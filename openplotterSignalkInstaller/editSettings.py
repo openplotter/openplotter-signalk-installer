@@ -57,6 +57,8 @@ class EditSettings:
 				self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': data, 'subOptions': {"validateChecksum": True, "type": "udp", "port": port}}}], 'enabled': True, 'id': ID})
 			elif networkType == 'TCP':
 				self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': data, 'subOptions': {"validateChecksum": True, "type": "tcp", "host": host, "port": port}}}], 'enabled': True, 'id': ID})
+			elif networkType == 'GPSD':
+				self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': data, 'subOptions': {"validateChecksum": True, "type": "gpsd", "host": host, "port": port}}}], 'enabled': True, 'id': ID})
 		elif data == 'SignalK':
 			if networkType == 'UDP':
 				self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': data, 'subOptions': {"type": "udp", "port": port}}}], 'enabled': True, 'id': ID})
