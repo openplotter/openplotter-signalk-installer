@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
 "POT-Creation-Date: 2020-02-14 19:39+0100\n"
-"PO-Revision-Date: 2020-02-28 19:19+0100\n"
+"PO-Revision-Date: 2020-09-26 13:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "Language: pl\n"
@@ -14,8 +14,10 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Crowdin-Project: openplotter\n"
+"X-Crowdin-Project-ID: 289888\n"
 "X-Crowdin-Language: pl\n"
 "X-Crowdin-File: openplotter-signalk-installer.po\n"
+"X-Crowdin-File-ID: 8\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: openplotterSignalkInstaller.py:34
@@ -96,15 +98,15 @@ msgstr "Aktywacja SSL dla każdego innego portu spowoduje uaktywnienie portu 344
 
 #: openplotterSignalkInstaller.py:207
 msgid "Restarting Signal K server... "
-msgstr "Ponowne uruchamianie serwera Signal K... "
+msgstr "Restartowanie serwera Signal K... "
 
 #: openplotterSignalkInstaller.py:212
 msgid "Signal K server restarted"
-msgstr "Serwer Signal K został uruchomiony ponownie"
+msgstr "Serwer Signal K został zrestartowany"
 
 #: ports.py:29
 msgid "Signal K - Admin"
-msgstr ""
+msgstr "Signal K - Administrator"
 
 #: ports.py:30
 msgid "Signal K - NMEA 0183 output"
@@ -112,7 +114,7 @@ msgstr "Signal K - wyjście NMEA 0183"
 
 #: ports.py:42 ports.py:45
 msgid "Signal K connection"
-msgstr ""
+msgstr "Połączenia Signal K"
 
 #: signalkPostInstall.py:41
 msgid "Installing/Updating signal K server..."
@@ -136,11 +138,11 @@ msgstr "GOTOWE"
 #: signalkPreUninstall.py:46 signalkPreUninstall.py:52
 #: signalkPreUninstall.py:58 signalkSettings.py:75
 msgid "FAILED: "
-msgstr "WYSTĄPIŁ BŁĄD: "
+msgstr "NIEPOWODZENIE: "
 
 #: signalkPostInstall.py:99
 msgid "Setting version..."
-msgstr ""
+msgstr "Ustawianie wersji..."
 
 #: signalkPreUninstall.py:30
 msgid "Removing files..."
@@ -156,7 +158,7 @@ msgstr "Odinstalowywanie serwera Signal K..."
 
 #: signalkPreUninstall.py:54
 msgid "Removing version..."
-msgstr ""
+msgstr "Usuwanie wersji..."
 
 #: startup.py:37
 msgid "Checking Signal K server..."

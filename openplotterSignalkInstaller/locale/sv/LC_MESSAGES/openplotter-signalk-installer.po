@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
 "POT-Creation-Date: 2020-02-14 19:39+0100\n"
-"PO-Revision-Date: 2020-02-28 19:19+0100\n"
+"PO-Revision-Date: 2020-09-26 13:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv\n"
@@ -140,7 +140,7 @@ msgstr "FEL: "
 
 #: signalkPostInstall.py:99
 msgid "Setting version..."
-msgstr ""
+msgstr "Ställer in version..."
 
 #: signalkPreUninstall.py:30
 msgid "Removing files..."
@@ -152,11 +152,11 @@ msgstr "Tar bort signalk service..."
 
 #: signalkPreUninstall.py:48
 msgid "Uninstalling Signal K Server..."
-msgstr ""
+msgstr "Avinstallerar Signal K-servern..."
 
 #: signalkPreUninstall.py:54
 msgid "Removing version..."
-msgstr ""
+msgstr "Tar bort version..."
 
 #: startup.py:37
 msgid "Checking Signal K server..."

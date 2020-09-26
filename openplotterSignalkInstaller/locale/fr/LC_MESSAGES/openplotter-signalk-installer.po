@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
 "POT-Creation-Date: 2020-02-14 19:39+0100\n"
-"PO-Revision-Date: 2020-02-28 19:18+0100\n"
+"PO-Revision-Date: 2020-09-26 13:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -14,8 +14,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Crowdin-Project: openplotter\n"
+"X-Crowdin-Project-ID: 289888\n"
 "X-Crowdin-Language: fr\n"
 "X-Crowdin-File: openplotter-signalk-installer.po\n"
+"X-Crowdin-File-ID: 8\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: openplotterSignalkInstaller.py:34
@@ -40,7 +42,7 @@ msgstr "Réinstaller Signal K"
 
 #: openplotterSignalkInstaller.py:56
 msgid "Apply Changes"
-msgstr "Appliquer modifications"
+msgstr "Appliquer les modifications"
 
 #: openplotterSignalkInstaller.py:58
 msgid "Cancel Changes"
@@ -120,7 +122,7 @@ msgstr "Installation / Mise à jour du serveur Signal K..."
 
 #: signalkPostInstall.py:49
 msgid "Removing previous installations..."
-msgstr "Désinstallation des installations précédentes..."
+msgstr "Suppression des installations précédentes..."
 
 #: signalkPostInstall.py:55 signalkSettings.py:38
 msgid "Editing config files..."
@@ -164,7 +166,7 @@ msgstr "Vérification du serveur Signal K..."
 
 #: startup.py:47
 msgid "running"
-msgstr "en cours"
+msgstr "en cours d'exécution"
 
 #: startup.py:48
 msgid "Signal K server is not running"
