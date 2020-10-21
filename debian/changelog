@@ -1,3 +1,10 @@
+openplotter-signalk-installer (2.3.0-stable) bionic; urgency=medium
+
+  * Add seatalk 1 connections
+  * Update translations
+
+ -- Sailoog <info@sailoog.com>  Wed, 21 Oct 2020 18:26:18 +0200
+
 openplotter-signalk-installer (2.2.0-stable) bionic; urgency=medium
 
   * Add auto GPSD connections
