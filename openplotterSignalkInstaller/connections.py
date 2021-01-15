@@ -56,7 +56,7 @@ class Connections:
 						if contents['statusCode'] == 202: 
 							self.href = contents['href']
 							self.conf.set(self.app, 'href', self.href)
-							return ['pending',_('The access request must be aproved with read/write permission.')]
+							return ['pending',_('The access request must be aproved with read/write permission in Signal K administrator.')]
 						else:
 							self.conf.set(self.app, 'href', '')
 							return ['repeat',_('Failed access request, status code: ')+contents['statusCode']+'.']
@@ -71,7 +71,7 @@ class Connections:
 						self.conf.set(self.app, 'href', '')
 						return ['repeat',_('The access request no longer exists.')]
 					else: 
-						if contents['statusCode'] == 202: return ['pending',_('The access request must be aproved with read/write permission.')]
+						if contents['statusCode'] == 202: return ['pending',_('The access request must be aproved with read/write permission in Signal K administrator.')]
 						elif contents['statusCode'] == 200:
 							if 'accessRequest' in contents:
 								if 'permission' in contents['accessRequest']:
@@ -87,15 +87,15 @@ class Connections:
 												for i in self.data['devices']:
 													if i['clientId'] == self.uuid:
 														if i['permissions'] != 'readwrite':
-															return ['permissions',_('No write permission in Signal K server.')]
-										return ['approved',_('The access request was approved.')]
+															return ['permissions',_('Set read/write permission for this access in Signal K administrator.')]
+										return ['approved',_('The access request was successfully approved.')]
 			else:
 				if self.data:
 					if 'devices' in self.data:
 						for i in self.data['devices']:
 							if i['clientId'] == self.uuid:
 								if i['permissions'] != 'readwrite':
-									return ['permissions',_('No write permission in Signal K server.')]
+									return ['permissions',_('Set read/write permission for this access in Signal K administrator.')]
 				try:
 					uri = self.platform.ws+'localhost:'+self.platform.skPort+'/signalk/v1/stream?subscribe=none'
 					headers = {'Authorization': 'Bearer '+self.token}

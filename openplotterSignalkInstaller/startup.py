@@ -45,7 +45,7 @@ class Check():
 		try:
 			subprocess.check_output(['systemctl', 'is-active', 'signalk.service']).decode(sys.stdin.encoding)
 			green = _('running')
-		except:red = _('Signal K server is not running')
+		except:red = ' ↳'+ _('Signal K server is not running')
 
 		return {'green': green,'black': black,'red': red}
 
