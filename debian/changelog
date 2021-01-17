@@ -1,3 +1,10 @@
+openplotter-signalk-installer (2.4.0-stable) bionic; urgency=medium
+
+  * Add ws access management
+  * Update translations
+
+ -- Sailoog <info@sailoog.com>  Sun, 17 Jan 2021 13:01:04 +0100
+
 openplotter-signalk-installer (2.3.0-stable) bionic; urgency=medium
 
   * Add seatalk 1 connections
