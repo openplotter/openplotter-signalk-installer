@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
-"POT-Creation-Date: 2020-02-14 19:39+0100\n"
-"PO-Revision-Date: 2020-10-21 18:24+0200\n"
+"POT-Creation-Date: 2021-01-15 22:16+0100\n"
+"PO-Revision-Date: 2021-01-17 12:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: Czech\n"
 "Language: cs\n"
@@ -19,6 +19,42 @@ msgstr ""
 "X-Crowdin-File: openplotter-signalk-installer.po\n"
 "X-Crowdin-File-ID: 8\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: connections.py:59 connections.py:74
+msgid "The access request must be aproved with read/write permission in Signal K administrator."
+msgstr "Žádost o přístup musí být potvrzena oprávněním ke čtení/zápisu v administraci Signal K."
+
+#: connections.py:62
+msgid "Failed access request, status code: "
+msgstr "Žádost o přístup selhala, status kódu: "
+
+#: connections.py:65
+msgid "Error requesting access to Signal K server: "
+msgstr "Došlo k chybě při zaslání požadavku o přístup serveru Signal K: "
+
+#: connections.py:72
+msgid "The access request no longer exists."
+msgstr "Požadavek na přístup již neexistuje."
+
+#: connections.py:80
+msgid "The access request was denied."
+msgstr "Přístup byl odmítnut."
+
+#: connections.py:90 connections.py:98
+msgid "Set read/write permission for this access in Signal K administrator."
+msgstr "Nastavte přístup \"read/write\" pro připojení k serveru Signal K v administraci."
+
+#: connections.py:91
+msgid "The access request was successfully approved."
+msgstr "Žádost o přístup byla úspěšně schválena."
+
+#: connections.py:113 connections.py:117
+msgid "Access to Signal K server no longer exists."
+msgstr "Přístup k serveru signálu K již vypršel nebo byl zamítnut."
+
+#: connections.py:121
+msgid "Access to Signal K server could not be checked."
+msgstr "Přístup k serveru Signal K nelze zkontrolovat."
 
 #: openplotterSignalkInstaller.py:34
 msgid "Signal K Installer"

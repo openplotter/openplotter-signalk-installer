@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
-"POT-Creation-Date: 2020-02-14 19:39+0100\n"
-"PO-Revision-Date: 2020-10-21 18:24+0200\n"
+"POT-Creation-Date: 2021-01-15 22:16+0100\n"
+"PO-Revision-Date: 2021-01-17 12:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -19,6 +19,42 @@ msgstr ""
 "X-Crowdin-File: openplotter-signalk-installer.po\n"
 "X-Crowdin-File-ID: 8\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: connections.py:59 connections.py:74
+msgid "The access request must be aproved with read/write permission in Signal K administrator."
+msgstr "Die Zugriffsanfrage muss mit Lese- und Schreibberechtigung im Signal-K-Administrator abgerufen werden."
+
+#: connections.py:62
+msgid "Failed access request, status code: "
+msgstr "Fehlerhafte Zugriffsanfrage, Statuscode: "
+
+#: connections.py:65
+msgid "Error requesting access to Signal K server: "
+msgstr "Fehler beim Abfragen des Zugriffs auf Signal K-Server: "
+
+#: connections.py:72
+msgid "The access request no longer exists."
+msgstr "Die Zugriffsanfrage existiert nicht mehr."
+
+#: connections.py:80
+msgid "The access request was denied."
+msgstr "Die Zugriffsanfrage wurde abgelehnt."
+
+#: connections.py:90 connections.py:98
+msgid "Set read/write permission for this access in Signal K administrator."
+msgstr "Legen Sie die Schreib-/Leserechte für diesen Zugriff im Signal K Administrator fest."
+
+#: connections.py:91
+msgid "The access request was successfully approved."
+msgstr "Die Zugriffsanfrage wurde erfolgreich genehmigt."
+
+#: connections.py:113 connections.py:117
+msgid "Access to Signal K server no longer exists."
+msgstr "Der Zugriff auf Signal K Server existiert nicht mehr."
+
+#: connections.py:121
+msgid "Access to Signal K server could not be checked."
+msgstr "Der Zugriff auf Signal K-Server konnte nicht überprüft werden."
 
 #: openplotterSignalkInstaller.py:34
 msgid "Signal K Installer"
