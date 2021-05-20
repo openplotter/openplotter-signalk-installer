@@ -2,59 +2,59 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
 "POT-Creation-Date: 2021-01-15 22:16+0100\n"
-"PO-Revision-Date: 2021-01-17 11:53\n"
+"PO-Revision-Date: 2021-05-20 20:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: Danish\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.4.3\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: .\n"
 "X-Crowdin-Project: openplotter\n"
 "X-Crowdin-Project-ID: 289888\n"
 "X-Crowdin-Language: da\n"
 "X-Crowdin-File: openplotter-signalk-installer.po\n"
 "X-Crowdin-File-ID: 8\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: connections.py:59 connections.py:74
 msgid "The access request must be aproved with read/write permission in Signal K administrator."
-msgstr ""
+msgstr "Adgangsanmodningen skal godkendes med læse/skriverettigheder i Signal K-administrator."
 
 #: connections.py:62
 msgid "Failed access request, status code: "
-msgstr ""
+msgstr "Kunne ikke tilgå anmodning, statuskode: "
 
 #: connections.py:65
 msgid "Error requesting access to Signal K server: "
-msgstr ""
+msgstr "Fejl under forespørgsel af adgang til Signal K server: "
 
 #: connections.py:72
 msgid "The access request no longer exists."
-msgstr ""
+msgstr "Adgangsanmodningen findes ikke længere."
 
 #: connections.py:80
 msgid "The access request was denied."
-msgstr ""
+msgstr "Adgangsanmodningen blev afvist."
 
 #: connections.py:90 connections.py:98
 msgid "Set read/write permission for this access in Signal K administrator."
-msgstr ""
+msgstr "Angiv læse/skriverettigheder for denne adgang i Signal K administrator."
 
 #: connections.py:91
 msgid "The access request was successfully approved."
-msgstr ""
+msgstr "Adgangsanmodningen blev godkendt."
 
 #: connections.py:113 connections.py:117
 msgid "Access to Signal K server no longer exists."
-msgstr ""
+msgstr "Der findes ikke længere adgang til Signal K-serveren."
 
 #: connections.py:121
 msgid "Access to Signal K server could not be checked."
-msgstr ""
+msgstr "Adgang til Signal K server kunne ikke kontrolleres."
 
 #: openplotterSignalkInstaller.py:34
 msgid "Signal K Installer"
@@ -207,4 +207,3 @@ msgstr "kører"
 #: startup.py:48
 msgid "Signal K server is not running"
 msgstr "Signal-K serveren kører ikke"
-

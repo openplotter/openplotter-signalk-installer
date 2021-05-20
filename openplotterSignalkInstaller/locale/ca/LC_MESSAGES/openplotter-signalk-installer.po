@@ -2,209 +2,208 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
 "POT-Creation-Date: 2021-01-15 22:16+0100\n"
-"PO-Revision-Date: 2021-03-08 19:01\n"
+"PO-Revision-Date: 2021-05-20 20:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.4.3\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: .\n"
 "X-Crowdin-Project: openplotter\n"
 "X-Crowdin-Project-ID: 289888\n"
 "X-Crowdin-Language: ca\n"
 "X-Crowdin-File: openplotter-signalk-installer.po\n"
 "X-Crowdin-File-ID: 8\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: connections.py:59 connections.py:74
 msgid "The access request must be aproved with read/write permission in Signal K administrator."
-msgstr ""
+msgstr "La petició d'accés ha de ser aprovada per un administrador de Signal K amb permisos de lectura/escriptura."
 
 #: connections.py:62
 msgid "Failed access request, status code: "
-msgstr ""
+msgstr "Error en la petició d'accés, codi d'estat: "
 
 #: connections.py:65
 msgid "Error requesting access to Signal K server: "
-msgstr ""
+msgstr "Error en la petició d'accés al servidor Signal K: "
 
 #: connections.py:72
 msgid "The access request no longer exists."
-msgstr ""
+msgstr "La petició d'accés ja no existeix."
 
 #: connections.py:80
 msgid "The access request was denied."
-msgstr ""
+msgstr "La sol·licitud d'accés ha estat denegada."
 
 #: connections.py:90 connections.py:98
 msgid "Set read/write permission for this access in Signal K administrator."
-msgstr ""
+msgstr "Estableix permisos de lectura/escriptura per a aquest access a administrador de Signal K."
 
 #: connections.py:91
 msgid "The access request was successfully approved."
-msgstr ""
+msgstr "La sol·licitud d'accés s'ha aprovat correctament."
 
 #: connections.py:113 connections.py:117
 msgid "Access to Signal K server no longer exists."
-msgstr ""
+msgstr "L'accés al servidor Signal K ja no existeix."
 
 #: connections.py:121
 msgid "Access to Signal K server could not be checked."
-msgstr ""
+msgstr "L'accés al servidor Signal K no es pot comprovar."
 
 #: openplotterSignalkInstaller.py:34
 msgid "Signal K Installer"
-msgstr ""
+msgstr "Instal·lador de Signal K"
 
 #: openplotterSignalkInstaller.py:44
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 #: openplotterSignalkInstaller.py:47 openplotterSignalkInstaller.py:65
 msgid "Settings"
-msgstr ""
+msgstr "Preferències"
 
 #: openplotterSignalkInstaller.py:50
 msgid "Vessel Data"
-msgstr ""
+msgstr "Dades del vaixell"
 
 #: openplotterSignalkInstaller.py:53
 msgid "Reinstall Signal K"
-msgstr ""
+msgstr "Reinstal·la Signal K"
 
 #: openplotterSignalkInstaller.py:56
 msgid "Apply Changes"
-msgstr ""
+msgstr "Aplica els canvis"
 
 #: openplotterSignalkInstaller.py:58
 msgid "Cancel Changes"
-msgstr ""
+msgstr "Cancel·la els canvis"
 
 #: openplotterSignalkInstaller.py:121
 msgid "Installed plugins, login credentials and all current settings will be removed. Are you sure?"
-msgstr ""
+msgstr "Els plugins instal·lats, les credencials d'autenticació i totes les preferències actuals s'eliminaran. Estàs segur?"
 
 #: openplotterSignalkInstaller.py:122 openplotterSignalkInstaller.py:138
 msgid "Question"
-msgstr ""
+msgstr "Pregunta"
 
 #: openplotterSignalkInstaller.py:130
 msgid "Reinstalling Signal K, please wait... "
-msgstr ""
+msgstr "Reinstal·lant Signal K, si us plau espera... "
 
 #: openplotterSignalkInstaller.py:137
 msgid "Only port and SSL settings will be changed. Installed plugins, login credentials and all current settings will be kept. Are you sure?"
-msgstr ""
+msgstr "Només les preferències de port i SSL canviaran. Els plugins instal·lats, credencials d'autenticació o les preferències actuals es conservaran. Estàs segur?"
 
 #: openplotterSignalkInstaller.py:146
 msgid "Configuring Signal K port and SSL, please wait... "
-msgstr ""
+msgstr "Configurant el port i el SSL de Signal K, si us plau espera... "
 
 #: openplotterSignalkInstaller.py:156
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #: openplotterSignalkInstaller.py:159
 msgid "The Signal K default port is 3000"
-msgstr ""
+msgstr "El port per defecte de Signal K és 3000"
 
 #: openplotterSignalkInstaller.py:160
 msgid "Port 80 does not require \":3000\" in browsers and app interfaces"
-msgstr ""
+msgstr "El port 80 no necessita \":3000\" en els navegadors i apps"
 
 #: openplotterSignalkInstaller.py:162
 msgid "Enable SSL"
-msgstr ""
+msgstr "Habilita SSL"
 
 #: openplotterSignalkInstaller.py:164
 msgid "The Signal K default SSL state is \"disabled\""
-msgstr ""
+msgstr "L'estat per defecte de SSL a Signal K és \"deshabilitat\""
 
 #: openplotterSignalkInstaller.py:165
 msgid "Enabling SSL for port 80 will result in port 443"
-msgstr ""
+msgstr "Habilitar SSL per al port 80 resultarà en el port 443"
 
 #: openplotterSignalkInstaller.py:166
 msgid "Enabling SSL for any other port will result in port 3443"
-msgstr ""
+msgstr "Habilitar SSL per a qualsevol altre port resultarà en el port 3443"
 
 #: openplotterSignalkInstaller.py:207
 msgid "Restarting Signal K server... "
-msgstr ""
+msgstr "Reiniciant el servidor Signal K... "
 
 #: openplotterSignalkInstaller.py:212
 msgid "Signal K server restarted"
-msgstr ""
+msgstr "Servidor Signal K reiniciat"
 
 #: ports.py:29
 msgid "Signal K - Admin"
-msgstr ""
+msgstr "Signal K - Administrador"
 
 #: ports.py:30
 msgid "Signal K - NMEA 0183 output"
-msgstr ""
+msgstr "Signal K - Sortida NMEA 0183"
 
 #: ports.py:42 ports.py:45
 msgid "Signal K connection"
-msgstr ""
+msgstr "Connexió Signal K"
 
 #: signalkPostInstall.py:41
 msgid "Installing/Updating signal K server..."
-msgstr ""
+msgstr "Instal·lant/Actualitzant servidor Signal K..."
 
 #: signalkPostInstall.py:49
 msgid "Removing previous installations..."
-msgstr ""
+msgstr "S’està desinstal·lant la versió anterior..."
 
 #: signalkPostInstall.py:55 signalkSettings.py:38
 msgid "Editing config files..."
-msgstr ""
+msgstr "Editant fitxers de configuració..."
 
 #: signalkPostInstall.py:96 signalkPostInstall.py:102 signalkPreUninstall.py:33
 #: signalkPreUninstall.py:45 signalkPreUninstall.py:51
 #: signalkPreUninstall.py:57 signalkSettings.py:73
 msgid "DONE"
-msgstr ""
+msgstr "FET"
 
 #: signalkPostInstall.py:97 signalkPostInstall.py:103 signalkPreUninstall.py:34
 #: signalkPreUninstall.py:46 signalkPreUninstall.py:52
 #: signalkPreUninstall.py:58 signalkSettings.py:75
 msgid "FAILED: "
-msgstr ""
+msgstr "ERROR: "
 
 #: signalkPostInstall.py:99
 msgid "Setting version..."
-msgstr ""
+msgstr "Establint la versió..."
 
 #: signalkPreUninstall.py:30
 msgid "Removing files..."
-msgstr ""
+msgstr "Eliminant els fitxers..."
 
 #: signalkPreUninstall.py:36
 msgid "Removing signalk service..."
-msgstr ""
+msgstr "Eliminant servei signalk..."
 
 #: signalkPreUninstall.py:48
 msgid "Uninstalling Signal K Server..."
-msgstr ""
+msgstr "Desinstal·lant el servidor Signal K..."
 
 #: signalkPreUninstall.py:54
 msgid "Removing version..."
-msgstr ""
+msgstr "Eliminant versió..."
 
 #: startup.py:37
 msgid "Checking Signal K server..."
-msgstr ""
+msgstr "Comprovant el servidor Signal K..."
 
 #: startup.py:47
 msgid "running"
-msgstr ""
+msgstr "en execució"
 
 #: startup.py:48
 msgid "Signal K server is not running"
-msgstr ""
-
+msgstr "El servidor Signal K no està en execució"
