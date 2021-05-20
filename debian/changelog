@@ -1,3 +1,10 @@
+openplotter-signalk-installer (2.4.1-stable) bionic; urgency=medium
+
+  * Allow devices connection for SSL SK servers
+  * Update translations
+
+ -- Sailoog <info@sailoog.com>  Thu, 20 May 2021 20:22:50 +0200
+
 openplotter-signalk-installer (2.4.0-stable) bionic; urgency=medium
 
   * Add ws access management
