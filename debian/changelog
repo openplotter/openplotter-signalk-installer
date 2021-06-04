@@ -1,4 +1,4 @@
-openplotter-signalk-installer (2.4.2-stable) UNRELEASED; urgency=medium
+openplotter-signalk-installer (2.4.2-stable) bionic; urgency=medium
 
   * Add websocket-client dependence
   * Update translations
