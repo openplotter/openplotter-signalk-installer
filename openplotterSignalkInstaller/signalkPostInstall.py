@@ -34,6 +34,12 @@ def main():
 		action = sys.argv[1]
 	except:pass
 
+	print(_('Installing python packages...'))
+	try:
+		subprocess.call(['pip3', 'install', 'websocket-client', '-U'])
+		print(_('DONE'))
+	except Exception as e: print(_('FAILED: ')+str(e))
+
 	try:
 		subprocess.call(['systemctl', 'stop', 'signalk.service'])
 		subprocess.call(['systemctl', 'stop', 'signalk.socket'])
