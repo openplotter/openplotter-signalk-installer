@@ -1,3 +1,10 @@
+openplotter-signalk-installer (2.4.2-stable) UNRELEASED; urgency=medium
+
+  * Add websocket-client dependence
+  * Update translations
+
+ -- Sailoog <info@sailoog.com>  Fri, 04 Jun 2021 19:27:34 +0200
+
 openplotter-signalk-installer (2.4.1-stable) bionic; urgency=medium
 
   * Allow devices connection for SSL SK servers
