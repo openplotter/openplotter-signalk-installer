@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# This file is part of Openplotter.
-# Copyright (C) 2019 by Sailoog <https://github.com/openplotter/openplotter-signalk-installer>
+# This file is part of OpenPlotter.
+# Copyright (C) 2022 by Sailoog <https://github.com/openplotter/openplotter-signalk-installer>
 #                  
 # Openplotter is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -48,6 +48,15 @@ def main():
 	print(_('Uninstalling Signal K Server...'))
 	try:
 		subprocess.call(['npm', 'uninstall', '--verbose', '-g', 'signalk-server'])
+		print(_('DONE'))
+	except Exception as e: print(_('FAILED: ')+str(e))
+
+	print(_('Removing nodejs, npm and sources...'))
+	try:
+		os.system('apt autoremove -y nodejs npm')
+		os.system('rm -f /etc/apt/sources.list.d/openplotterNodejs.list')
+		os.system('rm -f /etc/apt/preferences.d/99nodesource')
+		os.system('apt update')
 		print(_('DONE'))
 	except Exception as e: print(_('FAILED: ')+str(e))
 

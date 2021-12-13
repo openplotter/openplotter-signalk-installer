@@ -1,3 +1,9 @@
+openplotter-signalk-installer (3.0.0-beta) bullseye; urgency=medium
+
+  * Update to nodejs 16
+
+ -- Sailoog <info@sailoog.com>  Mon, 13 Dec 2021 20:03:14 +0100
+
 openplotter-signalk-installer (2.4.2-stable) bionic; urgency=medium
 
   * Add websocket-client dependence
