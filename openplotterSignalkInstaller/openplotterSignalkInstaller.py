@@ -114,7 +114,7 @@ class MyFrame(wx.Frame):
 		subprocess.Popen('openplotter-settings')
 
 	def OnToolShip(self, event): 
-		url = self.platform.http+'localhost:'+self.platform.skPort+'/admin/#/serverConfiguration/vessel'
+		url = self.platform.http+'localhost:'+self.platform.skPort+'/admin/#/serverConfiguration/settings'
 		webbrowser.open(url, new=2)
 
 	def OnToolReinstall(self, event): 
