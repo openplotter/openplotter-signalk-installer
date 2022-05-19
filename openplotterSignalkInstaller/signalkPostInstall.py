@@ -35,10 +35,10 @@ def main():
 	except:pass
 
 	print(_('Checking sources...'))
-	codename_debian = conf2.get('GENERAL', 'debianCodeName')
+	codeName = conf2.get('GENERAL', 'codeName')
 	nodeVersion = '16'
-	s = 'https://deb.nodesource.com/node_'+nodeVersion+'.x '+codename_debian
-	deb = 'deb https://deb.nodesource.com/node_'+nodeVersion+'.x '+codename_debian+' main\ndeb-src https://deb.nodesource.com/node_'+nodeVersion+'.x '+codename_debian+' main'
+	s = 'https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName
+	deb = 'deb https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName+' main\ndeb-src https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName+' main'
 	try:
 		sources = subprocess.check_output('apt-cache policy', shell=True).decode(sys.stdin.encoding)
 		if not s in sources:
@@ -46,7 +46,7 @@ def main():
 			fo = open('/etc/apt/sources.list.d/openplotterNodejs.list', "w")
 			fo.write(deb)
 			fo.close()
-			os.system('apt-key add - < '+currentdir+'/data/source/nodesource.gpg.key' )
+			os.system('cat '+currentdir+'/data/source/nodesource.gpg.key | gpg --dearmor > "/etc/apt/trusted.gpg.d/nodesource.gpg"')
 			os.system('cp -f '+currentdir+'/data/source/99nodesource /etc/apt/preferences.d')
 			os.system('apt update')
 			os.system('apt install -y nodejs')
