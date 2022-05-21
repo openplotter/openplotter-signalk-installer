@@ -35,7 +35,9 @@ def main():
 	except:pass
 
 	print(_('Checking sources...'))
-	codeName = conf2.get('GENERAL', 'codeName')
+	RELEASE_DATA = platform2.RELEASE_DATA
+	if 'UBUNTU_CODENAME' in RELEASE_DATA: codeName = RELEASE_DATA['UBUNTU_CODENAME']
+	else: codeName = conf2.get('GENERAL', 'codeName')
 	nodeVersion = '16'
 	s = 'https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName
 	deb = 'deb https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName+' main\ndeb-src https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName+' main'
