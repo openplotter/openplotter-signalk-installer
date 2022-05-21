@@ -1,4 +1,4 @@
-openplotter-signalk-installer (3.1.6-beta) bullseye; urgency=medium
+openplotter-signalk-installer (3.1.8-beta) bullseye; urgency=medium
 
   * Update to nodejs 16
 
