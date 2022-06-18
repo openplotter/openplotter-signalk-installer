@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
 "POT-Creation-Date: 2022-05-19 20:28+0200\n"
-"PO-Revision-Date: 2022-06-01 21:15+0200\n"
+"PO-Revision-Date: 2022-06-18 21:17+0200\n"
 "Last-Translator: \n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb_NO\n"
@@ -22,39 +22,39 @@ msgstr ""
 
 #: connections.py:59 connections.py:74
 msgid "The access request must be aproved with read/write permission in Signal K administrator."
-msgstr ""
+msgstr "Adgangsanmodningen må godkjennes med lese/skrivetillatelse i Signal K-administrator."
 
 #: connections.py:62
 msgid "Failed access request, status code: "
-msgstr ""
+msgstr "Tilgangsforespørsel feilet, statuskode: "
 
 #: connections.py:65
 msgid "Error requesting access to Signal K server: "
-msgstr ""
+msgstr "Feil under forespørsel om tilgang til Signal K server: "
 
 #: connections.py:72
 msgid "The access request no longer exists."
-msgstr ""
+msgstr "Adgangsforespørselen finnes ikke lenger."
 
 #: connections.py:80
 msgid "The access request was denied."
-msgstr ""
+msgstr "Adgangsforespørselen ble avslått."
 
 #: connections.py:90 connections.py:98
 msgid "Set read/write permission for this access in Signal K administrator."
-msgstr ""
+msgstr "Sett lese/skrivetilgang for denne tilgangen i Signal K-administrator."
 
 #: connections.py:91
 msgid "The access request was successfully approved."
-msgstr ""
+msgstr "Adgangsforespørselen ble godkjent."
 
 #: connections.py:113 connections.py:117
 msgid "Access to Signal K server no longer exists."
-msgstr ""
+msgstr "Tilgang til Signal K-server finnes ikke lenger."
 
 #: connections.py:121
 msgid "Access to Signal K server could not be checked."
-msgstr ""
+msgstr "Tilgang til Signal K-server kunne ikke kontrolleres."
 
 #: data/openplotter-signalk-installer.desktop:3
 #: openplotterSignalkInstaller.py:34
@@ -63,15 +63,15 @@ msgstr "Signal K Installeringsprogram"
 
 #: data/openplotter-signalk-installer.desktop:5
 msgid "openplotter-signalk-installer"
-msgstr ""
+msgstr "openplotter-opencpn-installer"
 
 #: data/openplotter-signalk.desktop:3
 msgid "Signal K"
-msgstr ""
+msgstr "Signal K"
 
 #: data/openplotter-signalk.desktop:5
 msgid "openplotter-signalk"
-msgstr ""
+msgstr "openplotter-signalk"
 
 #: openplotterSignalkInstaller.py:44
 msgid "Help"
@@ -167,7 +167,7 @@ msgstr "Signal K-tilkobling"
 
 #: signalkPostInstall.py:37
 msgid "Checking sources..."
-msgstr ""
+msgstr "Sjekker kilder..."
 
 #: signalkPostInstall.py:53 signalkPostInstall.py:59 signalkPostInstall.py:120
 #: signalkPostInstall.py:126 signalkPreUninstall.py:33
@@ -185,7 +185,7 @@ msgstr "MISLYKKET: "
 
 #: signalkPostInstall.py:56
 msgid "Installing python packages..."
-msgstr ""
+msgstr "Installerer python-pakker..."
 
 #: signalkPostInstall.py:66
 msgid "Installing/Updating signal K server..."
@@ -217,7 +217,7 @@ msgstr "Avinstallerer Signal K - server..."
 
 #: signalkPreUninstall.py:54
 msgid "Removing nodejs, npm and sources..."
-msgstr ""
+msgstr "Fjerner nodejs, npm og kilder..."
 
 #: signalkPreUninstall.py:63
 msgid "Removing version..."
