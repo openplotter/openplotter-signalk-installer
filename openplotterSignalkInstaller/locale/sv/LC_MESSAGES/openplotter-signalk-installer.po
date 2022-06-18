@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
-"POT-Creation-Date: 2021-01-15 22:16+0100\n"
-"PO-Revision-Date: 2021-06-04 19:25+0200\n"
+"POT-Creation-Date: 2022-05-19 20:28+0200\n"
+"PO-Revision-Date: 2022-06-18 21:17+0200\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -22,121 +22,134 @@ msgstr ""
 
 #: connections.py:59 connections.py:74
 msgid "The access request must be aproved with read/write permission in Signal K administrator."
-msgstr ""
+msgstr "Begäran om åtkomst måste tilldelas med läs-/skrivbehörighet i Signal K administrator."
 
 #: connections.py:62
 msgid "Failed access request, status code: "
-msgstr ""
+msgstr "Begäran om åtkomst misslyckades, statuskod: "
 
 #: connections.py:65
 msgid "Error requesting access to Signal K server: "
-msgstr ""
+msgstr "Fel vid begäran om åtkomst till Signal K-server: "
 
 #: connections.py:72
 msgid "The access request no longer exists."
-msgstr ""
+msgstr "Begäran om åtkomst finns inte längre."
 
 #: connections.py:80
 msgid "The access request was denied."
-msgstr ""
+msgstr "Begäran om åtkomst nekades."
 
 #: connections.py:90 connections.py:98
 msgid "Set read/write permission for this access in Signal K administrator."
-msgstr ""
+msgstr "Ange läs-/skrivbehörighet för denna anslutning i Signal K administrator."
 
 #: connections.py:91
 msgid "The access request was successfully approved."
-msgstr ""
+msgstr "Begäran om åtkomst har godkänts."
 
 #: connections.py:113 connections.py:117
 msgid "Access to Signal K server no longer exists."
-msgstr ""
+msgstr "Åtkomst till Signal K-servern finns inte längre."
 
 #: connections.py:121
 msgid "Access to Signal K server could not be checked."
-msgstr ""
+msgstr "Åtkomst till Signal K-servern kunde inte kontrolleras."
 
+#: data/openplotter-signalk-installer.desktop:3
 #: openplotterSignalkInstaller.py:34
 msgid "Signal K Installer"
-msgstr "Signal K installationsprogrma"
+msgstr "Signal K installationsprogram"
+
+#: data/openplotter-signalk-installer.desktop:5
+msgid "openplotter-signalk-installer"
+msgstr "openplotter-signalk-installer"
+
+#: data/openplotter-signalk.desktop:3
+msgid "Signal K"
+msgstr "Signal K"
+
+#: data/openplotter-signalk.desktop:5
+msgid "openplotter-signalk"
+msgstr "openplotter-signalk"
 
 #: openplotterSignalkInstaller.py:44
 msgid "Help"
 msgstr "Hjälp"
 
-#: openplotterSignalkInstaller.py:47 openplotterSignalkInstaller.py:65
+#: openplotterSignalkInstaller.py:47 openplotterSignalkInstaller.py:57
 msgid "Settings"
 msgstr "Inställningar"
 
 #: openplotterSignalkInstaller.py:50
-msgid "Vessel Data"
-msgstr "Båtdata"
-
-#: openplotterSignalkInstaller.py:53
 msgid "Reinstall Signal K"
 msgstr "Installera om Signal K"
 
-#: openplotterSignalkInstaller.py:56
-msgid "Apply Changes"
-msgstr "Aktivera Ändringar"
-
-#: openplotterSignalkInstaller.py:58
-msgid "Cancel Changes"
-msgstr "Avbryt"
-
-#: openplotterSignalkInstaller.py:121
+#: openplotterSignalkInstaller.py:113
 msgid "Installed plugins, login credentials and all current settings will be removed. Are you sure?"
 msgstr "Installerade plugins, användarkontorn och alla inställningar kommer att raderas. Är du säker?"
 
-#: openplotterSignalkInstaller.py:122 openplotterSignalkInstaller.py:138
+#: openplotterSignalkInstaller.py:114 openplotterSignalkInstaller.py:130
 msgid "Question"
 msgstr "Fråga"
 
-#: openplotterSignalkInstaller.py:130
+#: openplotterSignalkInstaller.py:122
 msgid "Reinstalling Signal K, please wait... "
 msgstr "Installerar om Signal K, vänligen vänta... "
 
-#: openplotterSignalkInstaller.py:137
+#: openplotterSignalkInstaller.py:129
 msgid "Only port and SSL settings will be changed. Installed plugins, login credentials and all current settings will be kept. Are you sure?"
 msgstr "Bara port och SSL-inställningar kommer att bli ändrade. Installerade plugins, användarkonton och alla inställningar kommer att sparas. Är du säker?"
 
-#: openplotterSignalkInstaller.py:146
+#: openplotterSignalkInstaller.py:138
 msgid "Configuring Signal K port and SSL, please wait... "
 msgstr "Konfigurerar Signal K port och SSL, vänligen vänta... "
 
-#: openplotterSignalkInstaller.py:156
+#: openplotterSignalkInstaller.py:148
 msgid "Port"
 msgstr "Port"
 
-#: openplotterSignalkInstaller.py:159
+#: openplotterSignalkInstaller.py:151
 msgid "The Signal K default port is 3000"
 msgstr "Den förinställda porten för Signal K är 3000"
 
-#: openplotterSignalkInstaller.py:160
+#: openplotterSignalkInstaller.py:152
 msgid "Port 80 does not require \":3000\" in browsers and app interfaces"
-msgstr "Port 80 kräver inte \":3000\" i browser och app inställningarn"
+msgstr "Port 80 kräver inte \":3000\" i webbläsaren och i inställningarna för apparna"
 
-#: openplotterSignalkInstaller.py:162
+#: openplotterSignalkInstaller.py:154
 msgid "Enable SSL"
 msgstr "Aktivera SSL"
 
-#: openplotterSignalkInstaller.py:164
+#: openplotterSignalkInstaller.py:156
 msgid "The Signal K default SSL state is \"disabled\""
-msgstr "SSL är avaktiverat per default"
+msgstr "SSL är avaktiverat som standard"
 
-#: openplotterSignalkInstaller.py:165
+#: openplotterSignalkInstaller.py:157
 msgid "Enabling SSL for port 80 will result in port 443"
 msgstr "Vid aktivering av SSL för port 80 så byts porten till 443"
 
-#: openplotterSignalkInstaller.py:166
+#: openplotterSignalkInstaller.py:158
 msgid "Enabling SSL for any other port will result in port 3443"
 msgstr "Aktiviering av SSL för alla andra portar kommer resultera i port 3443"
 
-#: openplotterSignalkInstaller.py:207
+#: openplotterSignalkInstaller.py:161
+msgid "Vessel Data"
+msgstr "Båtdata"
+
+#: openplotterSignalkInstaller.py:164
+msgid "Apply Changes"
+msgstr "Aktivera Ändringar"
+
+#: openplotterSignalkInstaller.py:166
+msgid "Cancel Changes"
+msgstr "Avbryt"
+
+#: openplotterSignalkInstaller.py:212
 msgid "Restarting Signal K server... "
 msgstr "Startar om Signal K server... "
 
-#: openplotterSignalkInstaller.py:212
+#: openplotterSignalkInstaller.py:217
 msgid "Signal K server restarted"
 msgstr "Signal K server har startats om"
 
@@ -152,31 +165,41 @@ msgstr "Signal K - NMEA 0183 output"
 msgid "Signal K connection"
 msgstr "Signal K koppling"
 
-#: signalkPostInstall.py:41
-msgid "Installing/Updating signal K server..."
-msgstr "Installerar/Uppdaterar signal K server..."
+#: signalkPostInstall.py:37
+msgid "Checking sources..."
+msgstr "Kontrollerar källor..."
 
-#: signalkPostInstall.py:49
-msgid "Removing previous installations..."
-msgstr "Tar bort föregående installationer..."
-
-#: signalkPostInstall.py:55 signalkSettings.py:38
-msgid "Editing config files..."
-msgstr "Editerar konfigurationsfiler..."
-
-#: signalkPostInstall.py:96 signalkPostInstall.py:102 signalkPreUninstall.py:33
+#: signalkPostInstall.py:53 signalkPostInstall.py:59 signalkPostInstall.py:120
+#: signalkPostInstall.py:126 signalkPreUninstall.py:33
 #: signalkPreUninstall.py:45 signalkPreUninstall.py:51
-#: signalkPreUninstall.py:57 signalkSettings.py:73
+#: signalkPreUninstall.py:60 signalkPreUninstall.py:66 signalkSettings.py:73
 msgid "DONE"
 msgstr "Klar"
 
-#: signalkPostInstall.py:97 signalkPostInstall.py:103 signalkPreUninstall.py:34
+#: signalkPostInstall.py:54 signalkPostInstall.py:60 signalkPostInstall.py:121
+#: signalkPostInstall.py:127 signalkPreUninstall.py:34
 #: signalkPreUninstall.py:46 signalkPreUninstall.py:52
-#: signalkPreUninstall.py:58 signalkSettings.py:75
+#: signalkPreUninstall.py:61 signalkPreUninstall.py:67 signalkSettings.py:75
 msgid "FAILED: "
 msgstr "FEL: "
 
-#: signalkPostInstall.py:99
+#: signalkPostInstall.py:56
+msgid "Installing python packages..."
+msgstr "Installerar python-paket..."
+
+#: signalkPostInstall.py:66
+msgid "Installing/Updating signal K server..."
+msgstr "Installerar/Uppdaterar signal K server..."
+
+#: signalkPostInstall.py:73
+msgid "Removing previous installations..."
+msgstr "Tar bort föregående installationer..."
+
+#: signalkPostInstall.py:79 signalkSettings.py:38
+msgid "Editing config files..."
+msgstr "Editerar konfigurationsfiler..."
+
+#: signalkPostInstall.py:123
 msgid "Setting version..."
 msgstr "Ställer in version..."
 
@@ -193,6 +216,10 @@ msgid "Uninstalling Signal K Server..."
 msgstr "Avinstallerar Signal K-servern..."
 
 #: signalkPreUninstall.py:54
+msgid "Removing nodejs, npm and sources..."
+msgstr "Tar bort nodejs, npm och källor..."
+
+#: signalkPreUninstall.py:63
 msgid "Removing version..."
 msgstr "Tar bort version..."
 

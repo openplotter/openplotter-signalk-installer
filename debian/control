@@ -10,6 +10,6 @@ X-Python3-Version: >= 3.2
 Package: openplotter-signalk-installer
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}, ${python3:Depends}, openplotter-settings, libnss-mdns, avahi-utils, libavahi-compat-libdnssd-dev, nodejs, canboat
+Depends: ${misc:Depends}, ${python3:Depends}, openplotter-settings, libnss-mdns, avahi-utils, libavahi-compat-libdnssd-dev, python3-pip
 Description: OpenPlotter app to manage Signal K node server installation
  OpenPlotter app to manage Signal K node server installation

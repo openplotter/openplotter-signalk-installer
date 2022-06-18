@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# This file is part of Openplotter.
-# Copyright (C) 2019 by Sailoog <https://github.com/openplotter/openplotter-signalk-installer>
+# This file is part of OpenPlotter.
+# Copyright (C) 2022 by Sailoog <https://github.com/openplotter/openplotter-signalk-installer>
 #                  
 # Openplotter is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -47,16 +47,8 @@ class MyFrame(wx.Frame):
 		toolSettings = self.toolbar1.AddTool(102, _('Settings'), wx.Bitmap(self.currentdir+"/data/settings.png"))
 		self.Bind(wx.EVT_TOOL, self.OnToolSettings, toolSettings)
 		self.toolbar1.AddSeparator()
-		toolShip = self.toolbar1.AddTool(103, _('Vessel Data'), wx.Bitmap(self.currentdir+"/data/ship.png"))
-		self.Bind(wx.EVT_TOOL, self.OnToolShip, toolShip)
-		self.toolbar1.AddSeparator()
 		toolReinstall = self.toolbar1.AddTool(104, _('Reinstall Signal K'), wx.Bitmap(self.currentdir+"/data/reinstall.png"))
 		self.Bind(wx.EVT_TOOL, self.OnToolReinstall, toolReinstall)
-		self.toolbar1.AddSeparator()
-		toolApply = self.toolbar1.AddTool(105, _('Apply Changes'), wx.Bitmap(self.currentdir+"/data/apply.png"))
-		self.Bind(wx.EVT_TOOL, self.OnToolApply, toolApply)
-		toolCancel = self.toolbar1.AddTool(106, _('Cancel Changes'), wx.Bitmap(self.currentdir+"/data/cancel.png"))
-		self.Bind(wx.EVT_TOOL, self.OnToolCancel, toolCancel)
 
 		self.notebook = wx.Notebook(self)
 		self.notebook.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGED, self.onTabChange)
@@ -114,7 +106,7 @@ class MyFrame(wx.Frame):
 		subprocess.Popen('openplotter-settings')
 
 	def OnToolShip(self, event): 
-		url = self.platform.http+'localhost:'+self.platform.skPort+'/admin/#/serverConfiguration/vessel'
+		url = self.platform.http+'localhost:'+self.platform.skPort+'/admin/#/serverConfiguration/settings'
 		webbrowser.open(url, new=2)
 
 	def OnToolReinstall(self, event): 
@@ -165,6 +157,15 @@ class MyFrame(wx.Frame):
 		sslText2 = wx.StaticText(self.settings, label=_('Enabling SSL for port 80 will result in port 443'))
 		sslText3 = wx.StaticText(self.settings, label=_('Enabling SSL for any other port will result in port 3443'))
 
+		self.toolbar2 = wx.ToolBar(self.settings, style=wx.TB_TEXT | wx.TB_VERTICAL)
+		toolShip = self.toolbar2.AddTool(203, _('Vessel Data'), wx.Bitmap(self.currentdir+"/data/ship.png"))
+		self.Bind(wx.EVT_TOOL, self.OnToolShip, toolShip)
+		self.toolbar2.AddSeparator()
+		toolApply = self.toolbar2.AddTool(205, _('Apply Changes'), wx.Bitmap(self.currentdir+"/data/apply.png"))
+		self.Bind(wx.EVT_TOOL, self.OnToolApply, toolApply)
+		toolCancel = self.toolbar2.AddTool(206, _('Cancel Changes'), wx.Bitmap(self.currentdir+"/data/cancel.png"))
+		self.Bind(wx.EVT_TOOL, self.OnToolCancel, toolCancel)
+
 		hbox = wx.BoxSizer(wx.HORIZONTAL)
 		hbox.Add(portLabel, 0, wx.UP | wx.EXPAND, 5)
 		hbox.Add(self.port, 0, wx.LEFT | wx.EXPAND, 10)
@@ -186,7 +187,11 @@ class MyFrame(wx.Frame):
 		vbox.Add(sslText3, 0, wx.LEFT | wx.EXPAND, 20)
 		vbox.AddStretchSpacer(1)
 
-		self.settings.SetSizer(vbox)
+		hbox0 = wx.BoxSizer(wx.HORIZONTAL)
+		hbox0.Add(vbox, 1, wx.EXPAND, 0)
+		hbox0.Add(self.toolbar2, 0, wx.EXPAND, 0)
+
+		self.settings.SetSizer(hbox0)
 
 		self.refreshSettings()
 
@@ -200,8 +205,8 @@ class MyFrame(wx.Frame):
 		else: 
 			self.ssl.SetValue(False)
 			self.port.Enable()
-		self.toolbar1.EnableTool(105,False)
-		self.toolbar1.EnableTool(106,False)
+		self.toolbar2.EnableTool(205,False)
+		self.toolbar2.EnableTool(206,False)
 
 	def restart_SK(self, msg):
 		if msg == 0: msg = _('Restarting Signal K server... ')
@@ -212,8 +217,8 @@ class MyFrame(wx.Frame):
 		self.ShowStatusBarGREEN(_('Signal K server restarted'))
 
 	def onPort(self, e):
-		self.toolbar1.EnableTool(105,True)
-		self.toolbar1.EnableTool(106,True)
+		self.toolbar2.EnableTool(205,True)
+		self.toolbar2.EnableTool(206,True)
 
 	def onSsl(self, e=0):
 		if self.ssl.GetValue():
@@ -223,8 +228,8 @@ class MyFrame(wx.Frame):
 		else: 
 			self.port.SetValue(3000)
 			self.port.Enable()
-		self.toolbar1.EnableTool(105,True)
-		self.toolbar1.EnableTool(106,True)
+		self.toolbar2.EnableTool(205,True)
+		self.toolbar2.EnableTool(206,True)
 
 	def pageOutput(self):
 		self.logger = rt.RichTextCtrl(self.output, style=wx.TE_MULTILINE|wx.TE_READONLY|wx.TE_DONTWRAP|wx.LC_SORT_ASCENDING)
