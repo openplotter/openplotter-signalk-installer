@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Openplotter. If not, see <http://www.gnu.org/licenses/>.
 
-import os, uuid, requests, ujson, ssl
+import os, uuid, requests, ujson, ssl, time
 from openplotterSettings import conf
 from openplotterSettings import platform
 from openplotterSettings import language
@@ -44,6 +44,17 @@ class Connections:
 			with open(self.platform.skDir+'/security.json') as data_file:
 				self.data = ujson.load(data_file)
 		except: self.data = ''
+
+	def validate(self,rand):
+		uri = self.platform.ws+'localhost:'+self.platform.skPort+'/signalk/v1/stream?subscribe=none'
+		headers = {'Authorization': 'Bearer '+self.token}
+		ws = create_connection(uri, header=headers, sslopt={"cert_reqs": ssl.CERT_NONE})
+		sk = '{"updates":[{"$source":"OpenPlotter","values":[{"path":"validation.'+self.app+'","value":"'+rand+'"}]}]}\n'
+		ws.send(sk)
+		ws.close()
+		r = requests.get(self.platform.http+'localhost:'+self.platform.skPort+'/signalk/v1/api/vessels/self', verify=False)
+		contents = ujson.loads(r.content)
+		return contents
 
 	def checkConnection(self):
 		#result = [pending|error|repeat|permissions|approved|validated,msg]
@@ -96,25 +107,19 @@ class Connections:
 							if i['clientId'] == self.uuid:
 								if i['permissions'] != 'readwrite':
 									return ['permissions',_('Set read/write permission for this access in Signal K administrator.')]
-				try:
-					uri = self.platform.ws+'localhost:'+self.platform.skPort+'/signalk/v1/stream?subscribe=none'
-					headers = {'Authorization': 'Bearer '+self.token}
-					ws = create_connection(uri, header=headers, sslopt={"cert_reqs": ssl.CERT_NONE})
-					rand = str(uuid.uuid4())
-					sk = '{"updates":[{"$source":"OpenPlotter","values":[{"path":"validation.'+self.app+'","value":"'+rand+'"}]}]}\n'
-					ws.send(sk)
-					ws.close()
-					r = requests.get(self.platform.http+'localhost:'+self.platform.skPort+'/signalk/v1/api/vessels/self', verify=False)
-					contents = ujson.loads(r.content)
-					if contents['validation'][self.app]['value'] == rand: return ['validated','']
-					else:
-						self.conf.set(self.app, 'href', '')
-						self.conf.set(self.app, 'token', '')
-						return ['repeat',_('Access to Signal K server no longer exists.')]
+				rand = str(uuid.uuid4())
+				try: contents = self.validate(rand)
 				except:
+					time.sleep(3)
+					try: contents = self.validate(rand)
+					except Exception as e:
+						return ['error',_('Unexpected error validating connection: ')+str(e)+'.']
+
+				if contents['validation'][self.app]['value'] == rand: return ['validated','']
+				else:
 					self.conf.set(self.app, 'href', '')
 					self.conf.set(self.app, 'token', '')
-					return ['repeat',_('Access to Signal K server no longer exists.')]
+					return ['repeat',_('Failed validation.')]
 
 		self.conf.set(self.app, 'href', '')
 		self.conf.set(self.app, 'token', '')
