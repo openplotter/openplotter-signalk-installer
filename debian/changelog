@@ -1,3 +1,10 @@
+openplotter-signalk-installer (3.1.15-stable) bullseye; urgency=medium
+
+  * Improve SK connection validation
+  * Update translations
+
+ -- Sailoog <info@sailoog.com>  Fri, 18 Nov 2022 11:55:03 +0100
+
 openplotter-signalk-installer (3.1.10-stable) bullseye; urgency=medium
 
   * Add sources installation
