@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
-"POT-Creation-Date: 2022-05-19 20:28+0200\n"
-"PO-Revision-Date: 2022-06-18 21:17+0200\n"
+"POT-Creation-Date: 2022-11-18 14:25+0100\n"
+"PO-Revision-Date: 2022-11-25 12:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -20,39 +20,43 @@ msgstr ""
 "X-Crowdin-File-ID: 8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: connections.py:59 connections.py:74
+#: connections.py:70 connections.py:85
 msgid "The access request must be aproved with read/write permission in Signal K administrator."
 msgstr "La demande d'accès doit être approuvée avec les permissions en lecture/écriture dans l'administrateur Signal K."
 
-#: connections.py:62
+#: connections.py:73
 msgid "Failed access request, status code: "
 msgstr "Demande d'accès échouée, code : "
 
-#: connections.py:65
+#: connections.py:76
 msgid "Error requesting access to Signal K server: "
 msgstr "Erreur lors de la demande d'accès au serveur Signal K: "
 
-#: connections.py:72
+#: connections.py:83
 msgid "The access request no longer exists."
 msgstr "La demande d'accès n'existe plus."
 
-#: connections.py:80
+#: connections.py:91
 msgid "The access request was denied."
 msgstr "La demande d'accès a été refusée."
 
-#: connections.py:90 connections.py:98
+#: connections.py:101 connections.py:109
 msgid "Set read/write permission for this access in Signal K administrator."
 msgstr "Définir les droits en lecture/écriture pour cet accès dans l'administrateur Signal K."
 
-#: connections.py:91
+#: connections.py:102
 msgid "The access request was successfully approved."
 msgstr "La demande d'accès a été approuvée avec succès."
 
-#: connections.py:113 connections.py:117
-msgid "Access to Signal K server no longer exists."
-msgstr "L'accès au serveur Signal K n'existe plus."
+#: connections.py:116
+msgid "Unexpected error validating connection: "
+msgstr ""
 
-#: connections.py:121
+#: connections.py:122
+msgid "Failed validation."
+msgstr ""
+
+#: connections.py:126
 msgid "Access to Signal K server could not be checked."
 msgstr "L'accès au serveur Signal K n'a pas pu être vérifié."
 

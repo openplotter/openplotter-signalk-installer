@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
-"POT-Creation-Date: 2022-05-19 20:28+0200\n"
-"PO-Revision-Date: 2022-06-18 21:17+0200\n"
+"POT-Creation-Date: 2022-11-18 14:25+0100\n"
+"PO-Revision-Date: 2022-11-25 12:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Language: sv\n"
@@ -20,39 +20,43 @@ msgstr ""
 "X-Crowdin-File-ID: 8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: connections.py:59 connections.py:74
+#: connections.py:70 connections.py:85
 msgid "The access request must be aproved with read/write permission in Signal K administrator."
 msgstr "Begäran om åtkomst måste tilldelas med läs-/skrivbehörighet i Signal K administrator."
 
-#: connections.py:62
+#: connections.py:73
 msgid "Failed access request, status code: "
 msgstr "Begäran om åtkomst misslyckades, statuskod: "
 
-#: connections.py:65
+#: connections.py:76
 msgid "Error requesting access to Signal K server: "
 msgstr "Fel vid begäran om åtkomst till Signal K-server: "
 
-#: connections.py:72
+#: connections.py:83
 msgid "The access request no longer exists."
 msgstr "Begäran om åtkomst finns inte längre."
 
-#: connections.py:80
+#: connections.py:91
 msgid "The access request was denied."
 msgstr "Begäran om åtkomst nekades."
 
-#: connections.py:90 connections.py:98
+#: connections.py:101 connections.py:109
 msgid "Set read/write permission for this access in Signal K administrator."
 msgstr "Ange läs-/skrivbehörighet för denna anslutning i Signal K administrator."
 
-#: connections.py:91
+#: connections.py:102
 msgid "The access request was successfully approved."
 msgstr "Begäran om åtkomst har godkänts."
 
-#: connections.py:113 connections.py:117
-msgid "Access to Signal K server no longer exists."
-msgstr "Åtkomst till Signal K-servern finns inte längre."
+#: connections.py:116
+msgid "Unexpected error validating connection: "
+msgstr "Oväntat fel vid validering av anslutning: "
 
-#: connections.py:121
+#: connections.py:122
+msgid "Failed validation."
+msgstr "Validering misslyckades."
+
+#: connections.py:126
 msgid "Access to Signal K server could not be checked."
 msgstr "Åtkomst till Signal K-servern kunde inte kontrolleras."
 

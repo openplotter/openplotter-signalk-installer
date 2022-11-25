@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
-"POT-Creation-Date: 2022-05-19 20:28+0200\n"
-"PO-Revision-Date: 2022-06-18 21:17+0200\n"
+"POT-Creation-Date: 2022-11-18 14:25+0100\n"
+"PO-Revision-Date: 2022-11-25 12:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: Danish\n"
 "Language: da\n"
@@ -20,39 +20,43 @@ msgstr ""
 "X-Crowdin-File-ID: 8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: connections.py:59 connections.py:74
+#: connections.py:70 connections.py:85
 msgid "The access request must be aproved with read/write permission in Signal K administrator."
 msgstr "Adgangsanmodningen skal godkendes med læse/skriverettigheder i Signal K-administrator."
 
-#: connections.py:62
+#: connections.py:73
 msgid "Failed access request, status code: "
 msgstr "Kunne ikke tilgå anmodning, statuskode: "
 
-#: connections.py:65
+#: connections.py:76
 msgid "Error requesting access to Signal K server: "
 msgstr "Fejl under forespørgsel af adgang til Signal K server: "
 
-#: connections.py:72
+#: connections.py:83
 msgid "The access request no longer exists."
 msgstr "Adgangsanmodningen findes ikke længere."
 
-#: connections.py:80
+#: connections.py:91
 msgid "The access request was denied."
 msgstr "Adgangsanmodningen blev afvist."
 
-#: connections.py:90 connections.py:98
+#: connections.py:101 connections.py:109
 msgid "Set read/write permission for this access in Signal K administrator."
 msgstr "Angiv læse/skriverettigheder for denne adgang i Signal K administrator."
 
-#: connections.py:91
+#: connections.py:102
 msgid "The access request was successfully approved."
 msgstr "Adgangsanmodningen blev godkendt."
 
-#: connections.py:113 connections.py:117
-msgid "Access to Signal K server no longer exists."
-msgstr "Der findes ikke længere adgang til Signal K-serveren."
+#: connections.py:116
+msgid "Unexpected error validating connection: "
+msgstr ""
 
-#: connections.py:121
+#: connections.py:122
+msgid "Failed validation."
+msgstr ""
+
+#: connections.py:126
 msgid "Access to Signal K server could not be checked."
 msgstr "Adgang til Signal K server kunne ikke kontrolleres."
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
-"POT-Creation-Date: 2022-05-19 20:28+0200\n"
-"PO-Revision-Date: 2022-06-18 21:17+0200\n"
+"POT-Creation-Date: 2022-11-18 14:25+0100\n"
+"PO-Revision-Date: 2022-11-25 12:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es\n"
@@ -20,39 +20,43 @@ msgstr ""
 "X-Crowdin-File-ID: 8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: connections.py:59 connections.py:74
+#: connections.py:70 connections.py:85
 msgid "The access request must be aproved with read/write permission in Signal K administrator."
 msgstr "La solicitud de acceso debe ser aprobada con permiso de lectura/escritura en el administrador de Signal K."
 
-#: connections.py:62
+#: connections.py:73
 msgid "Failed access request, status code: "
 msgstr "Solicitud de acceso fallida, código de estado: "
 
-#: connections.py:65
+#: connections.py:76
 msgid "Error requesting access to Signal K server: "
 msgstr "Error solicitando acceso al servidor Signal K: "
 
-#: connections.py:72
+#: connections.py:83
 msgid "The access request no longer exists."
 msgstr "La solicitud de acceso ya no existe."
 
-#: connections.py:80
+#: connections.py:91
 msgid "The access request was denied."
 msgstr "La solicitud de acceso fue denegada."
 
-#: connections.py:90 connections.py:98
+#: connections.py:101 connections.py:109
 msgid "Set read/write permission for this access in Signal K administrator."
-msgstr "Establecer permisos de lectura/escritura para este acceso en el administrador de Signal K."
+msgstr "Configure el permiso de lectura/escritura para este acceso en el administrador de Signal K."
 
-#: connections.py:91
+#: connections.py:102
 msgid "The access request was successfully approved."
 msgstr "La solicitud de acceso fue aprobada con éxito."
 
-#: connections.py:113 connections.py:117
-msgid "Access to Signal K server no longer exists."
-msgstr "El acceso al servidor Signal K ya no existe."
+#: connections.py:116
+msgid "Unexpected error validating connection: "
+msgstr "Error inesperado al validar la conexión: "
 
-#: connections.py:121
+#: connections.py:122
+msgid "Failed validation."
+msgstr "Error de validación."
+
+#: connections.py:126
 msgid "Access to Signal K server could not be checked."
 msgstr "No se pudo comprobar el acceso al servidor de Signal K."
 
@@ -111,7 +115,7 @@ msgstr "Puerto"
 
 #: openplotterSignalkInstaller.py:151
 msgid "The Signal K default port is 3000"
-msgstr "El puerto por defecto de Signal K es 3000"
+msgstr "El puerto predeterminado de Signal K es 3000"
 
 #: openplotterSignalkInstaller.py:152
 msgid "Port 80 does not require \":3000\" in browsers and app interfaces"
