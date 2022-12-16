@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openplotter-signalk-installer\n"
-"POT-Creation-Date: 2022-11-18 14:25+0100\n"
-"PO-Revision-Date: 2022-11-25 12:07+0100\n"
+"POT-Creation-Date: 2022-12-16 11:44+0100\n"
+"PO-Revision-Date: 2022-12-16 11:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -174,15 +174,15 @@ msgstr ""
 msgid "Checking sources..."
 msgstr ""
 
-#: signalkPostInstall.py:53 signalkPostInstall.py:59 signalkPostInstall.py:120
-#: signalkPostInstall.py:126 signalkPreUninstall.py:33
+#: signalkPostInstall.py:53 signalkPostInstall.py:59 signalkPostInstall.py:132
+#: signalkPostInstall.py:138 signalkPreUninstall.py:33
 #: signalkPreUninstall.py:45 signalkPreUninstall.py:51
 #: signalkPreUninstall.py:60 signalkPreUninstall.py:66 signalkSettings.py:73
 msgid "DONE"
 msgstr ""
 
-#: signalkPostInstall.py:54 signalkPostInstall.py:60 signalkPostInstall.py:121
-#: signalkPostInstall.py:127 signalkPreUninstall.py:34
+#: signalkPostInstall.py:54 signalkPostInstall.py:60 signalkPostInstall.py:133
+#: signalkPostInstall.py:139 signalkPreUninstall.py:34
 #: signalkPreUninstall.py:46 signalkPreUninstall.py:52
 #: signalkPreUninstall.py:61 signalkPreUninstall.py:67 signalkSettings.py:75
 msgid "FAILED: "
@@ -200,11 +200,11 @@ msgstr ""
 msgid "Removing previous installations..."
 msgstr ""
 
-#: signalkPostInstall.py:79 signalkSettings.py:38
+#: signalkPostInstall.py:91 signalkSettings.py:38
 msgid "Editing config files..."
 msgstr ""
 
-#: signalkPostInstall.py:123
+#: signalkPostInstall.py:135
 msgid "Setting version..."
 msgstr ""
 
