@@ -103,7 +103,7 @@ def main():
 			fo.close()
 
 			fo = open('/etc/systemd/system/signalk.service', "w")
-			fo.write( '[Service]\nExecStart='+skDir+'/signalk-server\nRestart=always\nStandardOutput=syslog\nStandardError=syslog\nWorkingDirectory='+skDir+'\nUser='+conf2.user+'\nEnvironment=EXTERNALPORT=3000\n[Install]\nWantedBy=multi-user.target\n')
+			fo.write( '[Service]\nExecStart='+skDir+'/signalk-server\nRestart=always\nStandardOutput=journal\nStandardError=journal\nWorkingDirectory='+skDir+'\nUser='+conf2.user+'\nEnvironment=EXTERNALPORT=3000\n[Install]\nWantedBy=multi-user.target\n')
 			fo.close()
 
 			fo = open('/usr/share/applications/openplotter-signalk.desktop', "w")
