@@ -1,3 +1,11 @@
+openplotter-signalk-installer (3.1.16-stable) bullseye; urgency=medium
+
+  * Fix log output
+  * Remove apps connections when re-installing
+  * Update translations
+
+ -- Sailoog <info@sailoog.com>  Fri, 16 Dec 2022 11:51:09 +0100
+
 openplotter-signalk-installer (3.1.15-stable) bullseye; urgency=medium
 
   * Improve SK connection validation
