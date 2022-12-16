@@ -74,7 +74,19 @@ def main():
 			subprocess.call(['rm', '-rf', skDir])
 			skDir = conf2.home+'/.signalk'
 			subprocess.call(['rm', '-rf', skDir])
-
+			conf2.set('GPIO', 'token', '')
+			conf2.set('GPIO', 'href', '')
+			conf2.set('I2C', 'token', '')
+			conf2.set('I2C', 'href', '')
+			conf2.set('IOT', 'token', '')
+			conf2.set('IOT', 'href', '')
+			conf2.set('MAIANA', 'token', '')
+			conf2.set('MAIANA', 'href', '')
+			conf2.set('NOTIFICATIONS', 'token', '')
+			conf2.set('NOTIFICATIONS', 'href', '')
+			conf2.set('PYPILOT', 'token', '')
+			conf2.set('PYPILOT', 'href', '')
+						
 		if not os.path.exists(skDir+'/settings.json'):
 			print(_('Editing config files...'))
 
