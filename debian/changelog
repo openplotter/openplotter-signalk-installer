@@ -1,3 +1,10 @@
+openplotter-signalk-installer (3.2.0-stable) bullseye; urgency=medium
+
+  * Update translations
+  * Update to node 18
+
+ -- Sailoog <info@sailoog.com>  Sun, 16 Jul 2023 16:45:20 +0200
+
 openplotter-signalk-installer (3.1.16-stable) bullseye; urgency=medium
 
   * Fix log output
