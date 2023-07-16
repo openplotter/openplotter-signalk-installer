@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
 "POT-Creation-Date: 2022-11-18 14:25+0100\n"
-"PO-Revision-Date: 2022-12-16 11:49+0100\n"
+"PO-Revision-Date: 2023-07-16 17:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
@@ -54,7 +54,7 @@ msgstr ""
 
 #: connections.py:122
 msgid "Failed validation."
-msgstr ""
+msgstr "Validació fallida."
 
 #: connections.py:126
 msgid "Access to Signal K server could not be checked."
