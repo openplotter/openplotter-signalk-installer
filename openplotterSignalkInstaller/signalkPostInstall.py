@@ -36,7 +36,7 @@ def main():
 
 	print(_('Checking sources...'))
 	codeName = conf2.get('GENERAL', 'codeName')
-	nodeVersion = '16'
+	nodeVersion = '18'
 	s = 'https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName
 	deb = 'deb https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName+' main\ndeb-src https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName+' main'
 	try:
@@ -78,8 +78,8 @@ def main():
 			conf2.set('GPIO', 'href', '')
 			conf2.set('I2C', 'token', '')
 			conf2.set('I2C', 'href', '')
-			conf2.set('IOT', 'token', '')
-			conf2.set('IOT', 'href', '')
+			conf2.set('IOB', 'token', '')
+			conf2.set('IOB', 'href', '')
 			conf2.set('MAIANA', 'token', '')
 			conf2.set('MAIANA', 'href', '')
 			conf2.set('NOTIFICATIONS', 'token', '')
