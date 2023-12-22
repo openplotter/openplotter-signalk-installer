@@ -55,7 +55,7 @@ def main():
 
 	print(_('Installing python packages...'))
 	try:
-		subprocess.call(['pip3', 'install', 'websocket-client', '-U'])
+		subprocess.call(['pip3', 'install', 'websocket-client', '-U', '--break-system-packages'])
 		print(_('DONE'))
 	except Exception as e: print(_('FAILED: ')+str(e))
 
