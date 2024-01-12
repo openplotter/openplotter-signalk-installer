@@ -53,12 +53,6 @@ def main():
 		print(_('DONE'))
 	except Exception as e: print(_('FAILED: ')+str(e))
 
-	print(_('Installing python packages...'))
-	try:
-		subprocess.call(['pip3', 'install', 'websocket-client', '-U', '--break-system-packages'])
-		print(_('DONE'))
-	except Exception as e: print(_('FAILED: ')+str(e))
-
 	try:
 		subprocess.call(['systemctl', 'stop', 'signalk.service'])
 		subprocess.call(['systemctl', 'stop', 'signalk.socket'])
