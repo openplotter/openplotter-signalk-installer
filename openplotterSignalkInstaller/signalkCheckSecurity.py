@@ -42,17 +42,20 @@ def main():
 	apps = ['GPIO','NOTIFICATIONS','I2C','MAIANA','PYPILOT','IOB']
 	for i in apps:
 		exists = False
+		OPuuid = str(uuid.uuid4()).split('-')
+		OPuuid[0] = i
+		OPuuid = '-'.join(OPuuid)
 		for index, value in enumerate(data['devices']):
 			if value['description'] == 'OpenPlotter '+i:
 				exists = True
 				if not value['clientId']: 
-					data['devices'][index]['clientId'] = str(uuid.uuid4())
+					data['devices'][index]['clientId'] = OPuuid
 					save = True
 				if value['permissions'] != "readwrite": 
 					data['devices'][index]['permissions'] = "readwrite"
 					save = True
 		if not exists: 
-			data['devices'].append({"clientId": str(uuid.uuid4()),"permissions": "readwrite","description": "OpenPlotter "+i})
+			data['devices'].append({"clientId": OPuuid,"permissions": "readwrite","description": "OpenPlotter "+i})
 			save = True
 
 	if save:

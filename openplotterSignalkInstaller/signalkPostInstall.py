@@ -99,7 +99,7 @@ def main():
 			subprocess.call(['chmod', '775', skDir+'/signalk-server'])
 
 		fo = open('/etc/systemd/system/check-signalk-security.service', "w")
-		fo.write( '[Unit]\nBefore=signalk.service\n[Service]\nExecStart=openplotter-check-signalk-security\nStandardOutput=journal\nStandardError=journal\nWorkingDirectory='+skDir+'\nUser='+conf2.user+'\n[Install]\nWantedBy=multi-user.target\n')
+		fo.write( '[Unit]\nBefore=signalk.service\n[Service]\nExecStart=openplotter-check-signalk-security\nWorkingDirectory='+skDir+'\nUser='+conf2.user+'\n[Install]\nWantedBy=multi-user.target\n')
 		fo.close()
 
 		fo = open('/etc/systemd/system/signalk.socket', "w")
@@ -107,7 +107,7 @@ def main():
 		fo.close()
 
 		fo = open('/etc/systemd/system/signalk.service', "w")
-		fo.write( '[Unit]\nAfter=check-signalk-security.service\n[Service]\nExecStart='+skDir+'/signalk-server\nRestart=always\nStandardOutput=journal\nStandardError=journal\nWorkingDirectory='+skDir+'\nUser='+conf2.user+'\nEnvironment=EXTERNALPORT=3000\n[Install]\nWantedBy=multi-user.target\n')
+		fo.write( '[Unit]\nAfter=check-signalk-security.service\n[Service]\nExecStart='+skDir+'/signalk-server\nRestart=always\nWorkingDirectory='+skDir+'\nUser='+conf2.user+'\nEnvironment=EXTERNALPORT=3000\n[Install]\nWantedBy=multi-user.target\n')
 		fo.close()
 
 		fo = open('/usr/share/applications/openplotter-signalk.desktop', "w")
