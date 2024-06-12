@@ -38,6 +38,12 @@ def main():
 		data['secretKey'] = secretKey
 		save = True
 
+	if 'allow_readonly' in data: allow_readonly = data['allow_readonly']
+	else: allow_readonly = False
+	if not allow_readonly:
+		data['allow_readonly'] = True
+		save = True
+
 	if not 'devices' in data: data['devices'] == []
 	apps = ['GPIO','NOTIFICATIONS','I2C','MAIANA','PYPILOT','IOB']
 	for i in apps:
