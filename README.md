@@ -14,7 +14,7 @@ Install [openplotter-settings](https://github.com/openplotter/openplotter-settin
 
 Install openplotter-signalk-installer dependencies:
 
-`sudo apt install libnss-mdns avahi-utils libavahi-compat-libdnssd-dev`
+`sudo apt install openplotter-settings libnss-mdns avahi-utils libavahi-compat-libdnssd-dev python3-websocket python3-jwt`
 
 Clone the repository:
 

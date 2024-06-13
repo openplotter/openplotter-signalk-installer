@@ -53,12 +53,6 @@ def main():
 		print(_('DONE'))
 	except Exception as e: print(_('FAILED: ')+str(e))
 
-	print(_('Installing python packages...'))
-	try:
-		subprocess.call(['pip3', 'install', 'websocket-client', '-U'])
-		print(_('DONE'))
-	except Exception as e: print(_('FAILED: ')+str(e))
-
 	try:
 		subprocess.call(['systemctl', 'stop', 'signalk.service'])
 		subprocess.call(['systemctl', 'stop', 'signalk.socket'])
@@ -74,27 +68,21 @@ def main():
 			subprocess.call(['rm', '-rf', skDir])
 			skDir = conf2.home+'/.signalk'
 			subprocess.call(['rm', '-rf', skDir])
-			conf2.set('GPIO', 'token', '')
-			conf2.set('GPIO', 'href', '')
-			conf2.set('I2C', 'token', '')
-			conf2.set('I2C', 'href', '')
-			conf2.set('IOB', 'token', '')
-			conf2.set('IOB', 'href', '')
-			conf2.set('MAIANA', 'token', '')
-			conf2.set('MAIANA', 'href', '')
-			conf2.set('NOTIFICATIONS', 'token', '')
-			conf2.set('NOTIFICATIONS', 'href', '')
-			conf2.set('PYPILOT', 'token', '')
-			conf2.set('PYPILOT', 'href', '')
 						
 		if not os.path.exists(skDir+'/settings.json'):
 			print(_('Editing config files...'))
 
 			os.mkdir(skDir)
 
-			fo = open(skDir+'/package.json', "w")
-			fo.write( '{"name": "signalk-server-config","version": "0.0.1","description": "This file is here to track your plugin and webapp installs.","repository": {},"license": "Apache-2.0"}')
-			fo.close()
+			if not os.path.exists(skDir+'/package.json'):
+				fo = open(skDir+'/package.json', "w")
+				fo.write( '{"name": "signalk-server-config","version": "0.0.1","description": "This file is here to track your plugin and webapp installs.","repository": {},"license": "Apache-2.0"}')
+				fo.close()
+
+			if not os.path.exists(skDir+'/security.json'):
+				fo = open(skDir+'/security.json', "w")
+				fo.write( '{"allow_readonly": true,"expiration": "NEVER","secretKey": "","users": [],"devices": [],"immutableConfig": false,"acls": [],"allowDeviceAccessRequests": true,"allowNewUserRegistration": true}')
+				fo.close()
 
 			fo = open(skDir+'/settings.json', "w")
 			fo.write( '{"interfaces": {},"ssl": false,"pipedProviders": [],"security": {"strategy": "./tokensecurity"}}')
@@ -110,22 +98,26 @@ def main():
 			subprocess.call(['chown', '-R', conf2.user+':'+conf2.user, skDir])
 			subprocess.call(['chmod', '775', skDir+'/signalk-server'])
 
-			fo = open('/etc/systemd/system/signalk.socket', "w")
-			fo.write( '[Socket]\nListenStream=3000\n\n[Install]\nWantedBy=sockets.target\n')
-			fo.close()
+		fo = open('/etc/systemd/system/check-signalk-security.service', "w")
+		fo.write( '[Unit]\nBefore=signalk.service\n[Service]\nExecStart=openplotter-check-signalk-security\nWorkingDirectory='+skDir+'\nUser='+conf2.user+'\n[Install]\nWantedBy=multi-user.target\n')
+		fo.close()
 
-			fo = open('/etc/systemd/system/signalk.service', "w")
-			fo.write( '[Service]\nExecStart='+skDir+'/signalk-server\nRestart=always\nStandardOutput=journal\nStandardError=journal\nWorkingDirectory='+skDir+'\nUser='+conf2.user+'\nEnvironment=EXTERNALPORT=3000\n[Install]\nWantedBy=multi-user.target\n')
-			fo.close()
+		fo = open('/etc/systemd/system/signalk.socket', "w")
+		fo.write( '[Socket]\nListenStream=3000\n\n[Install]\nWantedBy=sockets.target\n')
+		fo.close()
 
-			fo = open('/usr/share/applications/openplotter-signalk.desktop', "w")
-			fo.write( '[Desktop Entry]\nName=Signal K\nExec=x-www-browser http://localhost:3000\nIcon=openplotter-signalk\nStartupNotify=true\nTerminal=false\nType=Application\nCategories=OpenPlotter')
-			fo.close()
+		fo = open('/etc/systemd/system/signalk.service', "w")
+		fo.write( '[Unit]\nAfter=check-signalk-security.service\n[Service]\nExecStart='+skDir+'/signalk-server\nRestart=always\nWorkingDirectory='+skDir+'\nUser='+conf2.user+'\nEnvironment=EXTERNALPORT=3000\n[Install]\nWantedBy=multi-user.target\n')
+		fo.close()
+
+		fo = open('/usr/share/applications/openplotter-signalk.desktop', "w")
+		fo.write( '[Desktop Entry]\nName=Signal K\nExec=x-www-browser http://localhost:3000\nIcon=openplotter-signalk\nStartupNotify=true\nTerminal=false\nType=Application\nCategories=OpenPlotter')
+		fo.close()
 
 		subprocess.call(['systemctl', 'daemon-reload'])
+		subprocess.call(['systemctl', 'enable', 'check-signalk-security.service'])
 		subprocess.call(['systemctl', 'enable', 'signalk.service'])
 		subprocess.call(['systemctl', 'enable', 'signalk.socket'])
-		subprocess.call(['systemctl', 'stop', 'signalk.service'])
 		subprocess.call(['systemctl', 'restart', 'signalk.socket'])
 		subprocess.call(['systemctl', 'restart', 'signalk.service'])
 		

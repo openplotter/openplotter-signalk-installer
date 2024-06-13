@@ -115,12 +115,13 @@ class MyFrame(wx.Frame):
 		if dlg.ShowModal() == wx.ID_YES:
 			self.logger.Clear()
 			self.notebook.ChangeSelection(1)
+			self.ShowStatusBarYELLOW(_('Reinstalling Signal K, please wait... '))
 			popen = subprocess.Popen(self.platform.admin+' signalkPostInstall reinstall', stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
 			for line in popen.stdout:
 				if not 'Warning' in line and not 'WARNING' in line:
 					self.logger.WriteText(line)
-					self.ShowStatusBarYELLOW(_('Reinstalling Signal K, please wait... ')+line)
 					self.logger.ShowPosition(self.logger.GetLastPosition())
+					wx.GetApp().Yield()
 			self.restart_SK(0)
 			self.refreshSettings()
 		dlg.Destroy()
@@ -131,12 +132,13 @@ class MyFrame(wx.Frame):
 		if dlg.ShowModal() == wx.ID_YES:
 			self.logger.Clear()
 			self.notebook.ChangeSelection(1)
+			self.ShowStatusBarYELLOW(_('Configuring Signal K port and SSL, please wait... '))
 			popen = subprocess.Popen(self.platform.admin+' signalkSettings '+str(self.port.GetValue()), stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
 			for line in popen.stdout:
 				if not 'Warning' in line and not 'WARNING' in line:
 					self.logger.WriteText(line)
-					self.ShowStatusBarYELLOW(_('Configuring Signal K port and SSL, please wait... ')+line)
 					self.logger.ShowPosition(self.logger.GetLastPosition())
+					wx.GetApp().Yield()
 			self.restart_SK(0)
 			self.refreshSettings()
 		dlg.Destroy()

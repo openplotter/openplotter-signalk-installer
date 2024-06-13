@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
-"POT-Creation-Date: 2022-11-18 14:25+0100\n"
-"PO-Revision-Date: 2023-07-16 17:11+0200\n"
+"POT-Creation-Date: 2024-05-20 11:37+0200\n"
+"PO-Revision-Date: 2024-06-12 13:17+0200\n"
 "Last-Translator: \n"
 "Language-Team: Czech\n"
 "Language: cs\n"
@@ -20,45 +20,17 @@ msgstr ""
 "X-Crowdin-File-ID: 8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: connections.py:70 connections.py:85
-msgid "The access request must be aproved with read/write permission in Signal K administrator."
-msgstr "Žádost o přístup musí být potvrzena oprávněním ke čtení/zápisu v administraci Signal K."
+#: connections.py:69
+msgid "Error connecting to Signal K. Reboot so that security credentials are created."
+msgstr ""
 
-#: connections.py:73
-msgid "Failed access request, status code: "
-msgstr "Žádost o přístup selhala, status kódu: "
+#: connections.py:77
+msgid "Error validating Signal K connection: "
+msgstr ""
 
-#: connections.py:76
-msgid "Error requesting access to Signal K server: "
-msgstr "Došlo k chybě při zaslání požadavku o přístup serveru Signal K: "
-
-#: connections.py:83
-msgid "The access request no longer exists."
-msgstr "Požadavek na přístup již neexistuje."
-
-#: connections.py:91
-msgid "The access request was denied."
-msgstr "Přístup byl odmítnut."
-
-#: connections.py:101 connections.py:109
-msgid "Set read/write permission for this access in Signal K administrator."
-msgstr "Nastavte přístup \"read/write\" pro připojení k serveru Signal K v administraci."
-
-#: connections.py:102
-msgid "The access request was successfully approved."
-msgstr "Žádost o přístup byla úspěšně schválena."
-
-#: connections.py:116
-msgid "Unexpected error validating connection: "
-msgstr "Neočekávaná chyba při ověřování připojení: "
-
-#: connections.py:122
-msgid "Failed validation."
-msgstr "Validace selhala."
-
-#: connections.py:126
-msgid "Access to Signal K server could not be checked."
-msgstr "Přístup k serveru Signal K nelze zkontrolovat."
+#: connections.py:79
+msgid "Unexpected error validating connection."
+msgstr ""
 
 #: data/openplotter-signalk-installer.desktop:3
 #: openplotterSignalkInstaller.py:34
@@ -93,67 +65,67 @@ msgstr "Přeinstalovat signál K"
 msgid "Installed plugins, login credentials and all current settings will be removed. Are you sure?"
 msgstr "Nainstalované pluginy, přihlašovací údaje a všechna aktuální nastavení budou odstraněny. Jste si jisti?"
 
-#: openplotterSignalkInstaller.py:114 openplotterSignalkInstaller.py:130
+#: openplotterSignalkInstaller.py:114 openplotterSignalkInstaller.py:131
 msgid "Question"
 msgstr "Otázka"
 
-#: openplotterSignalkInstaller.py:122
+#: openplotterSignalkInstaller.py:118
 msgid "Reinstalling Signal K, please wait... "
 msgstr "Přeinstalování Signal K, čekejte prosím... "
 
-#: openplotterSignalkInstaller.py:129
+#: openplotterSignalkInstaller.py:130
 msgid "Only port and SSL settings will be changed. Installed plugins, login credentials and all current settings will be kept. Are you sure?"
 msgstr "Budou změněna pouze nastavení portu a SSL. Nainstalované pluginy, přihlašovací údaje a všechna aktuální nastavení budou zachována. Jste si jisti?"
 
-#: openplotterSignalkInstaller.py:138
+#: openplotterSignalkInstaller.py:135
 msgid "Configuring Signal K port and SSL, please wait... "
 msgstr "Konfigurace portu Signal K a SSL, čekejte prosím... "
 
-#: openplotterSignalkInstaller.py:148
+#: openplotterSignalkInstaller.py:150
 msgid "Port"
 msgstr "Port"
 
-#: openplotterSignalkInstaller.py:151
+#: openplotterSignalkInstaller.py:153
 msgid "The Signal K default port is 3000"
 msgstr "Výchozí port Signal K je 3000"
 
-#: openplotterSignalkInstaller.py:152
+#: openplotterSignalkInstaller.py:154
 msgid "Port 80 does not require \":3000\" in browsers and app interfaces"
 msgstr "Port 80 nevyžaduje \":3000\" v prohlížečích a rozhraní aplikací"
 
-#: openplotterSignalkInstaller.py:154
+#: openplotterSignalkInstaller.py:156
 msgid "Enable SSL"
 msgstr "Povolit SSL"
 
-#: openplotterSignalkInstaller.py:156
+#: openplotterSignalkInstaller.py:158
 msgid "The Signal K default SSL state is \"disabled\""
 msgstr "Výchozí nastavení SSL je \"zakázán\""
 
-#: openplotterSignalkInstaller.py:157
+#: openplotterSignalkInstaller.py:159
 msgid "Enabling SSL for port 80 will result in port 443"
 msgstr "Povolení SSL bude mít za následek, že bude použit port 443"
 
-#: openplotterSignalkInstaller.py:158
+#: openplotterSignalkInstaller.py:160
 msgid "Enabling SSL for any other port will result in port 3443"
 msgstr "Povolení SSL pro jakýkoli jiný port bude mít za následek port 3443"
 
-#: openplotterSignalkInstaller.py:161
+#: openplotterSignalkInstaller.py:163
 msgid "Vessel Data"
 msgstr "Údaje o plavidle"
 
-#: openplotterSignalkInstaller.py:164
+#: openplotterSignalkInstaller.py:166
 msgid "Apply Changes"
 msgstr "Použít změny"
 
-#: openplotterSignalkInstaller.py:166
+#: openplotterSignalkInstaller.py:168
 msgid "Cancel Changes"
 msgstr "Zrušit změny"
 
-#: openplotterSignalkInstaller.py:212
+#: openplotterSignalkInstaller.py:214
 msgid "Restarting Signal K server... "
 msgstr "Restartuji Signal K server... "
 
-#: openplotterSignalkInstaller.py:217
+#: openplotterSignalkInstaller.py:219
 msgid "Signal K server restarted"
 msgstr "Signal K server byl restartován"
 
@@ -173,37 +145,33 @@ msgstr "Signal K připojení"
 msgid "Checking sources..."
 msgstr "Kontrola zdrojů..."
 
-#: signalkPostInstall.py:53 signalkPostInstall.py:59 signalkPostInstall.py:120
-#: signalkPostInstall.py:126 signalkPreUninstall.py:33
-#: signalkPreUninstall.py:45 signalkPreUninstall.py:51
-#: signalkPreUninstall.py:60 signalkPreUninstall.py:66 signalkSettings.py:73
+#: signalkPostInstall.py:53 signalkPostInstall.py:124 signalkPostInstall.py:130
+#: signalkPreUninstall.py:33 signalkPreUninstall.py:45
+#: signalkPreUninstall.py:51 signalkPreUninstall.py:60
+#: signalkPreUninstall.py:66 signalkSettings.py:73
 msgid "DONE"
 msgstr "Hotovo"
 
-#: signalkPostInstall.py:54 signalkPostInstall.py:60 signalkPostInstall.py:121
-#: signalkPostInstall.py:127 signalkPreUninstall.py:34
-#: signalkPreUninstall.py:46 signalkPreUninstall.py:52
-#: signalkPreUninstall.py:61 signalkPreUninstall.py:67 signalkSettings.py:75
+#: signalkPostInstall.py:54 signalkPostInstall.py:125 signalkPostInstall.py:131
+#: signalkPreUninstall.py:34 signalkPreUninstall.py:46
+#: signalkPreUninstall.py:52 signalkPreUninstall.py:61
+#: signalkPreUninstall.py:67 signalkSettings.py:75
 msgid "FAILED: "
 msgstr "Chyba: "
 
-#: signalkPostInstall.py:56
-msgid "Installing python packages..."
-msgstr "Instalování balíčků pro Python..."
-
-#: signalkPostInstall.py:66
+#: signalkPostInstall.py:60
 msgid "Installing/Updating signal K server..."
 msgstr "Instaluji/Aktualizuji Signal K server..."
 
-#: signalkPostInstall.py:73
+#: signalkPostInstall.py:67
 msgid "Removing previous installations..."
 msgstr "Odebírám předchozí instalaci..."
 
-#: signalkPostInstall.py:79 signalkSettings.py:38
+#: signalkPostInstall.py:73 signalkSettings.py:38
 msgid "Editing config files..."
 msgstr "Upravuji konfiguraci..."
 
-#: signalkPostInstall.py:123
+#: signalkPostInstall.py:127
 msgid "Setting version..."
 msgstr "Nastavuji verzi..."
 
