@@ -70,8 +70,8 @@ class EditSettings:
 		self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': 'NMEA2000', 'subOptions': {'interface': interface, 'type': 'canbus-canboatjs'}}}], 'enabled': True, 'id': ID})
 		return self.write()
 
-	def setSeatalkConnection(self, ID, gpio, gpioInvert):
-		self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': 'Seatalk', 'subOptions': {'gpio': gpio, 'gpioInvert': gpioInvert}}}], 'enabled': True, 'id': ID})
+	def setSeatalkConnection(self, ID, gpio, gpioInvert, type):
+		self.data['pipedProviders'].append({'pipeElements': [{'type': 'providers/simple', 'options': {'logging': False, 'type': 'Seatalk', 'subOptions': {"type": type, 'gpio': gpio, 'gpioInvert': gpioInvert}}}], 'enabled': True, 'id': ID})
 		return self.write()
 
 	def removeConnection(self, ID):
