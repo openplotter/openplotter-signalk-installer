@@ -1,3 +1,10 @@
+openplotter-signalk-installer (4.2.0-stable) bookworm; urgency=medium
+
+  * Add support for Seatalk1 in Raspberry Pi 5
+  * Update translations
+
+ -- Sailoog <info@sailoog.com>  Thu, 29 Aug 2024 10:42:00 +0200
+
 openplotter-signalk-installer (4.1.0-stable) bookworm; urgency=medium
 
   * stable
