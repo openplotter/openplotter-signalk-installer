@@ -36,7 +36,7 @@ def main():
 
 	print(_('Checking sources...'))
 	codeName = conf2.get('GENERAL', 'codeName')
-	nodeVersion = '18'
+	nodeVersion = '20'
 	s = 'https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName
 	deb = 'deb https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName+' main\ndeb-src https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName+' main'
 	try:
