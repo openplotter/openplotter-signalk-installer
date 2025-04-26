@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openplotter\n"
 "POT-Creation-Date: 2024-05-20 11:37+0200\n"
-"PO-Revision-Date: 2024-08-29 10:53+0200\n"
+"PO-Revision-Date: 2025-04-26 13:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb_NO\n"
@@ -22,15 +22,15 @@ msgstr ""
 
 #: connections.py:69
 msgid "Error connecting to Signal K. Reboot so that security credentials are created."
-msgstr ""
+msgstr "Feil ved tilkobling til Signal K. Start på nytt slik at sikkerhetsinformasjon opprettes."
 
 #: connections.py:77
 msgid "Error validating Signal K connection: "
-msgstr ""
+msgstr "Feil under validering av Signal K tilkobling: "
 
 #: connections.py:79
 msgid "Unexpected error validating connection."
-msgstr ""
+msgstr "Uventet feil ved validering av tilkobling."
 
 #: data/openplotter-signalk-installer.desktop:3
 #: openplotterSignalkInstaller.py:34
