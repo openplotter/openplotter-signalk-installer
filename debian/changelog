@@ -1,3 +1,11 @@
+openplotter-signalk-installer (4.3.0-stable) bookworm; urgency=medium
+
+  * update nodejs from v20 to v22
+  * Fix new nodejs source and key
+  * Update translations
+
+ -- Sailoog <info@sailoog.com>  Thu, 22 Jan 2026 13:01:21 +0100
+
 openplotter-signalk-installer (4.2.2-stable) bookworm; urgency=medium
 
   * update nodejs from v18 to v20
