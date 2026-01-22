@@ -35,10 +35,10 @@ def main():
 	except:pass
 
 	print(_('Checking sources...'))
-	codeName = conf2.get('GENERAL', 'codeName')
-	nodeVersion = '20'
+	codeName = 'nodistro'
+	nodeVersion = '22'
 	s = 'https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName
-	deb = 'deb https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName+' main\ndeb-src https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName+' main'
+	deb = 'deb https://deb.nodesource.com/node_'+nodeVersion+'.x '+codeName+' main'
 	try:
 		sources = subprocess.check_output('apt-cache policy', shell=True).decode(sys.stdin.encoding)
 		if not s in sources:
