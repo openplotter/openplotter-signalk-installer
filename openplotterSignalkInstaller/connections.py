@@ -32,22 +32,29 @@ class Connections:
 		if self.conf.get('GENERAL', 'debug') == 'yes': self.debug = True
 		else: self.debug = False
 
+		secretKey=''
+		try:
+			with open(self.platform.skDir+'/security-secret.key') as key_file:
+				secretKey = key_file.read().strip()
+		except: secretKey=''
 		try:
 			with open(self.platform.skDir+'/security.json') as data_file:
 				self.data = ujson.load(data_file)
+				if not secretKey:
+					if 'secretKey' in self.data: secretKey = self.data['secretKey']
 		except Exception as e:
 			self.data = ''
 			if self.debug: print('Error reading security.json: '+str(e))
 
 		self.token = ''
 		try:
-			if 'secretKey' in self.data: 
-				secretKey = self.data['secretKey']
-				if secretKey:
-					if 'devices' in self.data:
-						for i in self.data['devices']:
-							if i['description'] == 'OpenPlotter '+self.app:
-								self.token = jwt.encode({ "device": i['clientId'] }, secretKey, algorithm="HS256")
+			if secretKey:
+				if 'devices' in self.data:
+					for i in self.data['devices']:
+						if i['description'] == 'OpenPlotter '+self.app:
+							self.token = jwt.encode({ "device": i['clientId'] }, secretKey, algorithm="HS256")
+			else: 
+				if self.debug: print('Error getting secretKey')
 		except Exception as e:
 			self.token = ''
 			if self.debug: print('Error getting token: '+str(e))

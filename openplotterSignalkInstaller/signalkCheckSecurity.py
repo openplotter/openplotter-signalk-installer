@@ -19,6 +19,7 @@ import ujson, os, uuid
 
 def main():
 	security_file = 'security.json'
+	security_key = 'security-secret.key'
 
 	if not os.path.exists(security_file):
 		fo = open('security.json', "w")
@@ -31,12 +32,18 @@ def main():
 
 	if 'secretKey' in data: secretKey = data['secretKey']
 	else: secretKey = ''
+
+	if not secretKey and os.path.exists(security_key):
+		with open(security_key) as key_file: 
+			secretKey = key_file.read().strip()
+
 	if not secretKey:
 		for i in range(16):
 			secretKey+= str(uuid.uuid4())
 		secretKey = secretKey.replace('-','')
-		data['secretKey'] = secretKey
-		save = True
+		if 'secretKey' in data: 
+			data['secretKey'] = secretKey
+			save = True
 
 	if 'allow_readonly' in data: allow_readonly = data['allow_readonly']
 	else: allow_readonly = False
