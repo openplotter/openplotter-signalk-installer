@@ -88,15 +88,15 @@ def main():
 			fo.write( '{"interfaces": {},"ssl": false,"pipedProviders": [],"security": {"strategy": "./tokensecurity"}}')
 			fo.close()
 
-			node_path = subprocess.check_output(['npm', 'config', 'get', 'prefix']).decode(sys.stdin.encoding)
-			node_path = node_path.replace('\n','')
-			node_path = node_path.strip()
-			fo = open(skDir+'/signalk-server', "w")
-			fo.write( '#!/bin/sh\n'+node_path+'/lib/node_modules/signalk-server/bin/signalk-server -c '+skDir+' $*\n')
-			fo.close()
+		node_path = subprocess.check_output(['npm', 'config', 'get', 'prefix']).decode(sys.stdin.encoding)
+		node_path = node_path.replace('\n','')
+		node_path = node_path.strip()
+		fo = open(skDir+'/signalk-server', "w")
+		fo.write( '#!/bin/sh\n'+node_path+'/lib/node_modules/signalk-server/bin/signalk-server -c '+skDir+' $*\n')
+		fo.close()
 
-			subprocess.call(['chown', '-R', conf2.user+':'+conf2.user, skDir])
-			subprocess.call(['chmod', '775', skDir+'/signalk-server'])
+		subprocess.call(['chown', '-R', conf2.user+':'+conf2.user, skDir])
+		subprocess.call(['chmod', '775', skDir+'/signalk-server'])
 
 		fo = open('/etc/systemd/system/check-signalk-security.service', "w")
 		fo.write( '[Unit]\nBefore=signalk.service\n[Service]\nExecStart=openplotter-check-signalk-security\nWorkingDirectory='+skDir+'\nUser='+conf2.user+'\n[Install]\nWantedBy=multi-user.target\n')
