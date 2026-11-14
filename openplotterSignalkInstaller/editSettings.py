@@ -27,6 +27,8 @@ class EditSettings:
 			with open(self.setting_file) as data_file:
 				self.data = ujson.load(data_file)
 		except: self.data = ''
+		if isinstance(self.data, dict):
+			self.data.setdefault('pipedProviders', [])
 
 	def write(self):
 		try:
